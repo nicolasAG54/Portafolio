@@ -1,0 +1,23 @@
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <strong>{{ profile.name }}</strong>
+      <p>{{ profile.role }} desde {{ profile.location }}.</p>
+    </div>
+
+    <nav aria-label="Enlaces rápidos">
+      @for (item of navItems; track item.fragment) {
+        <a routerLink="/" [fragment]="item.fragment">{{ item.label }}</a>
+      }
+    </nav>
+
+    <div class="footer__social">
+      @for (link of socialLinks; track link.label) {
+        <a [href]="link.href" target="_blank" rel="noreferrer">{{ link.label }}</a>
+      }
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© {{ year }} {{ profile.name }}. Portafolio Angular.</span>
+  </div>
+</footer>

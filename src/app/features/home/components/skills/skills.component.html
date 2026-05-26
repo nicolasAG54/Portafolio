@@ -1,0 +1,22 @@
+<section id="skills" class="section">
+  <div class="container">
+    <app-section-title
+      eyebrow="Skills"
+      title="Stack frontend para productos Angular mantenibles"
+      description="Habilidades agrupadas por impacto práctico: desarrollo UI, arquitectura Angular, pruebas, herramientas y entendimiento backend."
+    />
+
+    <div class="skills-grid">
+      @for (group of skillGroups; track group.area) {
+        <article class="skill-card card">
+          <h3>{{ group.area }}</h3>
+          <div class="skill-card__tags">
+            @for (skill of group.skills; track skill) {
+              <span>{{ skill }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

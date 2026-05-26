@@ -1,0 +1,37 @@
+<section id="contacto" class="section contact">
+  <div class="container contact__grid">
+    <div>
+      <app-section-title
+        eyebrow="Contacto"
+        title="Hablemos de una oportunidad frontend"
+        description="Información editable para conectar por email, LinkedIn, GitHub o WhatsApp. El formulario es visual y queda listo para integrar backend."
+      />
+
+      <div class="contact__links">
+        @for (link of socialLinks; track link.label) {
+          <a [href]="link.href" target="_blank" rel="noreferrer" [attr.aria-label]="'Abrir ' + link.label">
+            <span>{{ link.label }}</span>
+            <strong>{{ link.value }}</strong>
+          </a>
+        }
+      </div>
+    </div>
+
+    <form class="contact-form card" aria-label="Formulario visual de contacto">
+      <label>
+        Nombre
+        <input type="text" name="name" placeholder="Tu nombre" autocomplete="name">
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" placeholder="tu@email.com" autocomplete="email">
+      </label>
+      <label>
+        Mensaje
+        <textarea name="message" rows="5" placeholder="Cuéntame sobre la vacante o proyecto"></textarea>
+      </label>
+      <button class="button" type="button">Enviar mensaje</button>
+      <p>Formulario sin backend por ahora. Integra Formspree, Firebase o una API propia cuando lo necesites.</p>
+    </form>
+  </div>
+</section>

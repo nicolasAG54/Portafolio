@@ -1,0 +1,38 @@
+<section id="proyectos" class="section">
+  <div class="container">
+    <app-section-title
+      eyebrow="Proyectos"
+      title="Casos que comunican criterio Angular"
+      description="Cards listas para reemplazar con repositorios reales. Cada proyecto enfatiza problema, stack e impacto para reclutadores técnicos."
+    />
+
+    <div class="projects-grid">
+      @for (project of projects; track project.name) {
+        <article class="project-card card">
+          <div>
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+            <strong>{{ project.impact }}</strong>
+          </div>
+
+          <div class="project-card__tags" aria-label="Tecnologias usadas">
+            @for (tech of project.technologies; track tech) {
+              <span>{{ tech }}</span>
+            }
+          </div>
+
+          <div class="project-card__actions">
+            <a class="button button--ghost" [href]="project.codeUrl" target="_blank" rel="noreferrer">
+              Ver código
+            </a>
+            @if (project.demoUrl) {
+              <a class="button" [href]="project.demoUrl" target="_blank" rel="noreferrer">Ver demo</a>
+            } @else {
+              <button class="button button--disabled" type="button" disabled>Demo no disponible</button>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

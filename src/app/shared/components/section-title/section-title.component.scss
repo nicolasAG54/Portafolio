@@ -1,0 +1,17 @@
+.section-title {
+  max-width: 720px;
+  margin-bottom: 34px;
+}
+
+h2 {
+  margin: 12px 0 0;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1.04;
+}
+
+p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}

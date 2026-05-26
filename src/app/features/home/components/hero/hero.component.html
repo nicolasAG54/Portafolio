@@ -1,0 +1,44 @@
+<section id="inicio" class="hero">
+  <div class="container hero__grid">
+    <div class="hero__content reveal">
+      <span class="eyebrow">Disponible remoto Colombia/LATAM</span>
+      <h1>{{ profile.headline }}</h1>
+      <p class="hero__summary">{{ profile.summary }}</p>
+
+      <div class="hero__actions" aria-label="Acciones principales">
+        <a class="button" href="#proyectos">Ver proyectos</a>
+        <a class="button button--ghost" [href]="profile.cvUrl" download>Descargar CV</a>
+        <a class="button button--ghost" href="#contacto">Contactarme</a>
+      </div>
+
+      <dl class="hero__stats" aria-label="Resumen profesional">
+        <div>
+          <dt>4+</dt>
+          <dd>años de experiencia</dd>
+        </div>
+        <div>
+          <dt>30+</dt>
+          <dd>modulos empresariales</dd>
+        </div>
+        <div>
+          <dt>E2E</dt>
+          <dd>testing con Playwright</dd>
+        </div>
+      </dl>
+    </div>
+
+    <aside class="hero-card card reveal" aria-label="Perfil profesional destacado">
+      <img
+        src="/assets/images/profile-card.svg"
+        width="420"
+        height="420"
+        alt="Retrato ilustrado de Nicolás Alarcón Guzmán"
+      >
+      <div class="hero-card__body">
+        <span>{{ profile.name }}</span>
+        <strong>{{ profile.role }}</strong>
+        <p>{{ profile.location }} · Angular, TypeScript, APIs, Playwright</p>
+      </div>
+    </aside>
+  </div>
+</section>

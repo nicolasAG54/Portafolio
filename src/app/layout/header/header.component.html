@@ -1,0 +1,31 @@
+<header class="site-header">
+  <nav class="container nav" aria-label="Navegacion principal">
+    <a class="brand" routerLink="/" fragment="inicio" (click)="closeMenu()" aria-label="Ir al inicio">
+      <span class="brand__mark">NA</span>
+      <span>
+        <strong>{{ profile.name }}</strong>
+        <small>{{ profile.role }}</small>
+      </span>
+    </a>
+
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="Abrir o cerrar menu"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-controls="main-menu"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div id="main-menu" class="nav__links" [class.nav__links--open]="isMenuOpen()">
+      @for (item of navItems; track item.fragment) {
+        <a routerLink="/" [fragment]="item.fragment" (click)="closeMenu()">{{ item.label }}</a>
+      }
+      <a class="nav__cta" [href]="profile.cvUrl" download>Descargar CV</a>
+    </div>
+  </nav>
+</header>

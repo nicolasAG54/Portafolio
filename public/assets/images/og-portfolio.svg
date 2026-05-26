@@ -1,0 +1,10 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#08111F"/>
+  <circle cx="1000" cy="40" r="260" fill="#A78BFA" fill-opacity=".18"/>
+  <circle cx="170" cy="120" r="300" fill="#4FC3F7" fill-opacity=".16"/>
+  <text x="86" y="220" fill="#4FC3F7" font-family="Arial, sans-serif" font-size="34" font-weight="800">NICOLAS ALARCON GUZMAN</text>
+  <text x="86" y="330" fill="#F6F8FB" font-family="Arial, sans-serif" font-size="76" font-weight="900">Angular Frontend Developer</text>
+  <text x="86" y="410" fill="#AEBBD0" font-family="Arial, sans-serif" font-size="34">TypeScript · Interfaces empresariales · Playwright E2E</text>
+  <rect x="86" y="484" width="336" height="64" rx="8" fill="#4FC3F7"/>
+  <text x="126" y="526" fill="#06101E" font-family="Arial, sans-serif" font-size="26" font-weight="900">Portafolio profesional</text>
+</svg>

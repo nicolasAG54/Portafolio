@@ -1,0 +1,19 @@
+<svg width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Nicolas Alarcon Guzman</title>
+  <desc id="desc">Retrato ilustrado profesional para portafolio frontend.</desc>
+  <rect width="420" height="420" fill="#0F1C2F"/>
+  <circle cx="210" cy="162" r="86" fill="#4D78A2"/>
+  <circle cx="210" cy="134" r="48" fill="#F0C6A5"/>
+  <path d="M154 132C158 93 184 70 217 72C246 74 267 96 270 132C250 116 232 109 211 109C190 109 170 116 154 132Z" fill="#132337"/>
+  <path d="M122 347C132 282 165 245 210 245C255 245 288 282 298 347H122Z" fill="#D7E4F2"/>
+  <path d="M153 347C160 291 181 260 210 260C239 260 260 291 267 347H153Z" fill="#FFFFFF"/>
+  <path d="M183 259L210 316L237 259" stroke="#4FC3F7" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="210" cy="210" r="190" stroke="url(#paint0_linear)" stroke-width="8"/>
+  <text x="210" y="388" text-anchor="middle" fill="#F6F8FB" font-family="Arial, sans-serif" font-size="24" font-weight="800">Angular Frontend Developer</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="20" y1="20" x2="390" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4FC3F7"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+</svg>
