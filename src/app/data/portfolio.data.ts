@@ -34,13 +34,13 @@ export interface SocialLink {
 
 export const profile = {
   name: 'Nicolás Alarcón Guzmán',
-  role: 'Frontend Developer | Angular Developer',
+  role: 'Ingeniero de Sistemas | Frontend Developer',
   location: 'Colombia',
-  email: 'correo.editable@example.com',
+  email: 'ni-co123@hotmail.com',
   cvUrl: '/assets/cv/nicolas-alarcon-cv.pdf',
   headline: 'Frontend Developer especializado en Angular',
   summary:
-    'Construyo interfaces modernas, escalables y enfocadas en experiencia de usuario usando Angular, TypeScript y buenas prácticas de desarrollo.',
+    'Mi experiencia se centra en aplicaciones empresariales y bacanrias, con atención a la mantenibilidad, integración con APIs y pruebas automatizadas.',
   recruiterPitch:
     'Ingeniero de Sistemas con más de 4 años de experiencia creando y manteniendo aplicaciones web para entornos empresariales. Me enfoco en componentes reutilizables, flujos claros, integración con APIs y pruebas E2E que reducen regresiones.',
 };
@@ -57,32 +57,16 @@ export const navItems: NavItem[] = [
 export const skillGroups: SkillGroup[] = [
   {
     area: 'Frontend',
-    skills: ['Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'SCSS', 'Responsive Design'],
+    skills: ['Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'SCSS', 'Tailwindcss', 'Bootstrap', 'Material'],
   },
   {
-    area: 'Angular',
-    skills: [
-      'Standalone Components',
-      'Routing',
-      'Signals',
-      'Services',
-      'Guards',
-      'Interceptors',
-      'Reactive Forms',
-    ],
-  },
+    area: 'Backend y Database',
+    skills: ['Node.js', 'ASP.NET Core', 'Firebase', 'REST APIs','MySql', 'SQL Developer'],
+  },  
   {
     area: 'Testing',
-    skills: ['Playwright', 'E2E Testing', 'Component Testing'],
-  },
-  {
-    area: 'Herramientas',
-    skills: ['Git', 'GitHub', 'VS Code', 'Agile/Scrum', 'Postman', 'Azure DevOps'],
-  },
-  {
-    area: 'Backend básico',
-    skills: ['Node.js', 'Express', 'ASP.NET Core', 'Firebase', 'REST APIs'],
-  },
+    skills: ['Playwright', 'Karate', 'Selenium', 'E2E Testing', 'Component Testing'],
+  },  
 ];
 
 export const experience: ExperienceItem[] = [
@@ -91,18 +75,18 @@ export const experience: ExperienceItem[] = [
     company: 'Qualita Corp',
     period: 'Mar 2026 - Actualidad',
     summary:
-      'Desarrollo frontend para aplicaciones de uso bancario, integrando vistas Angular con servicios .NET y flujos orientados a operacion interna.',
+      'Desarrollo en ASP.NET MVC 5, .NET Framework 4.8 con OWIN, SignalR, EF6 y Oracle, para aplicativos de Uso Bancario.',
     achievements: [
-      'Construcción de interfaces con Angular, SCSS y consumo de APIs para procesos empresariales.',
-      'Implementación de pruebas automatizadas E2E con Playwright para rutas críticas.',
-      'Trabajo cercano con equipos backend y QA para reducir incidencias en entregas.',
+      'Desarrollo y mantenimiento de aplicación web empresarial en ASP.NET MVC, C#, Razor.',
+      'integración a servicios REST, consultas Oracle SQL y optimización de rendimiento.',
+      'control de versiones en Azure Repos y análisis de calidad con SonarCloud.',
     ],
-    stack: ['Angular', 'TypeScript', 'Playwright', '.NET', 'SCSS'],
+    stack: ['ASP.NET MVC / .NET Framework', 'Razor / .cshtml', 'jQuery', 'Bootstrap', 'Oracle Database'],
   },
   {
     role: 'Frontend Developer',
     company: 'Teleperformance',
-    period: 'Jul 2021 - Jul 2025',
+    period: 'Jul 2021 - Ago 2025',
     summary:
       'Mantenimiento y evolucion de aplicaciones web internas para uso empresarial, con foco en estabilidad, escalabilidad y mejoras de UX.',
     achievements: [
@@ -122,7 +106,8 @@ export const projects: ProjectItem[] = [
     technologies: ['Angular', 'TypeScript', 'SCSS', 'Signals', 'REST APIs'],
     codeUrl: 'https://github.com/editar/dashboard-angular',
     demoUrl: '',
-    impact: 'Pensado para equipos que necesitan lectura rapida de indicadores y acciones frecuentes.',
+    impact:
+      'Pensado para equipos que necesitan lectura rapida de indicadores y acciones frecuentes.',
   },
   {
     name: 'Sistema de gestion empresarial',
@@ -149,7 +134,8 @@ export const projects: ProjectItem[] = [
     technologies: ['Angular', 'ASP.NET Core', 'REST APIs', 'SQL Server', 'Playwright'],
     codeUrl: 'https://github.com/editar/angular-dotnet-fullstack',
     demoUrl: '',
-    impact: 'Demuestra criterio frontend con entendimiento del contrato backend y pruebas de flujo completo.',
+    impact:
+      'Demuestra criterio frontend con entendimiento del contrato backend y pruebas de flujo completo.',
   },
 ];
 
@@ -169,17 +155,17 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: 'LinkedIn',
-    value: 'linkedin.com/in/editar-perfil',
-    href: 'https://www.linkedin.com/in/editar-perfil',
+    value: 'linkedin.com/in/nicolasalarconguzman',
+    href: 'https://www.linkedin.com/in/nicolasalarconguzman/',
   },
   {
     label: 'GitHub',
-    value: 'github.com/editar-usuario',
-    href: 'https://github.com/editar-usuario',
+    value: 'github.com/nicolasAG54',
+    href: 'https://github.com/nicolasAG54',
   },
   {
     label: 'WhatsApp',
-    value: '+57 300 000 0000',
-    href: 'https://wa.me/573000000000',
+    value: '+57 310 208 4697',
+    href: 'https://wa.me/573102084697',
   },
 ];

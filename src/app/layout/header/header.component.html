@@ -1,6 +1,6 @@
 <header class="site-header">
   <nav class="container nav" aria-label="Navegacion principal">
-    <a class="brand" routerLink="/" fragment="inicio" (click)="closeMenu()" aria-label="Ir al inicio">
+    <a class="brand" href="#inicio" (click)="closeMenu()" aria-label="Ir al inicio">
       <span class="brand__mark">NA</span>
       <span>
         <strong>{{ profile.name }}</strong>
@@ -23,7 +23,7 @@
 
     <div id="main-menu" class="nav__links" [class.nav__links--open]="isMenuOpen()">
       @for (item of navItems; track item.fragment) {
-        <a routerLink="/" [fragment]="item.fragment" (click)="closeMenu()">{{ item.label }}</a>
+        <a [href]="'#' + item.fragment" (click)="closeMenu()">{{ item.label }}</a>
       }
       <a class="nav__cta" [href]="profile.cvUrl" download>Descargar CV</a>
     </div>

@@ -7,7 +7,7 @@
 
     <nav aria-label="Enlaces rápidos">
       @for (item of navItems; track item.fragment) {
-        <a routerLink="/" [fragment]="item.fragment">{{ item.label }}</a>
+        <a [href]="'#' + item.fragment">{{ item.label }}</a>
       }
     </nav>
 

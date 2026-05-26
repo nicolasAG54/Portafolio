@@ -1,22 +1,28 @@
 <section id="sobre-mi" class="section about">
   <div class="container about__grid">
-    <app-section-title
-      eyebrow="Sobre mí"
-      title="Frontend orientado a producto, calidad y escalabilidad"
-      [description]="profile.recruiterPitch"
-    />
+    <div class="about__copy">
+      <app-section-title
+        eyebrow="Sobre mí"
+        title="Frontend orientado a producto, calidad y escalabilidad"
+        [description]="profile.recruiterPitch"
+      />
 
-    <div class="about__content card">
-      <p>
-        Mi experiencia se ha concentrado en construir y mantener interfaces empresariales:
-        formularios, dashboards, módulos administrativos, integraciones con APIs y flujos donde la
-        claridad visual impacta directamente la operación.
-      </p>
-      <p>
-        Trabajo con Angular moderno, TypeScript y SCSS cuidando arquitectura, reutilización de
-        componentes, accesibilidad y pruebas E2E. Me interesa que una interfaz no solo se vea bien:
-        debe ser facil de usar, facil de mantener y confiable para el equipo.
-      </p>
+      <ul class="about__highlights" aria-label="Fortalezas profesionales">
+        <li>Interfaces empresariales claras, mantenibles y pensadas para usuarios reales.</li>
+        <li>Componentes reutilizables con Angular moderno, TypeScript, SCSS y buenas prácticas.</li>
+        <li>Mejora de UX/UI, consumo de APIs y pruebas E2E para reducir regresiones.</li>
+      </ul>
     </div>
+
+    <figure class="about__visual card">
+      <img
+        src="/assets/images/about-web-interface.png"
+        width="1254"
+        height="1254"
+        alt="Mockup minimalista de una interfaz web moderna"
+        loading="lazy"
+      >
+      <figcaption>UI empresarial · Angular · UX mantenible</figcaption>
+    </figure>
   </div>
 </section>

@@ -1,11 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 import { navItems, profile } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
