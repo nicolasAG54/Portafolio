@@ -1,0 +1,50 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Build (if package.json has a build script)
+        run: |
+          if [ -f package.json ]; then
+            node -e "process.exit(require('./package.json').scripts && require('./package.json').scripts.build ? 0 : 1)" && {
+              echo "Detected build script, installing and building..."
+              npm ci
+              npm run build
+            } || echo "No build script detected, skipping build step"
+          else
+            echo "No package.json found, skipping Node build step"
+          fi
+
+      - id: set-publish-dir
+        run: |
+          if [ -d "./build" ]; then
+            echo "publish_dir=build" >> $GITHUB_OUTPUT
+          elif [ -d "./dist" ]; then
+            echo "publish_dir=dist" >> $GITHUB_OUTPUT
+          elif [ -d "./public" ]; then
+            echo "publish_dir=public" >> $GITHUB_OUTPUT
+          else
+            echo "publish_dir=" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Deploy to gh-pages
+        if: steps.set-publish-dir.outputs.publish_dir != ''
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ steps.set-publish-dir.outputs.publish_dir }}
