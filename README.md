@@ -94,7 +94,7 @@ public/assets/cv/nicolas-alarcon-cv.pdf
 Compila con el `base-href` del repositorio:
 
 ```bash
-npx ng build --base-href /PortFolioNicolas/
+npx ng build --base-href /Portafolio/
 ```
 
 Publica el contenido de:
