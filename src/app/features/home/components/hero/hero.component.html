@@ -1,47 +1,38 @@
-<section id="inicio" class="hero">
-  <div class="container hero__grid">
-    <div class="hero__content reveal">
-      <span class="eyebrow">Disponible remoto Colombia/LATAM</span>
-      <h1>{{ profile.headline }}</h1>
-      <p class="hero__summary">{{ profile.summary }}</p>
+<section id="inicio" class="hero" aria-labelledby="hero-title">
+  <div class="hero__aura" aria-hidden="true"></div>
 
-      <div class="hero__actions" aria-label="Acciones principales">
-        <a class="button" href="#proyectos">Ver proyectos</a>
-        <a class="button button--ghost" [href]="profile.cvUrl" download>Descargar CV</a>
-        <a class="button button--ghost" href="#contacto">Contactarme</a>
-      </div>
+  <div class="hero__title-wrap">
+    <h1 id="hero-title" class="hero__title hero-heading">
+      <span>Hola, soy</span>
+      <span>Nicolás</span>
+    </h1>
+  </div>
 
-      <dl class="hero__stats" aria-label="Resumen profesional">
-        <div>
-          <dt>4+</dt>
-          <dd>años de experiencia Frontend</dd>
-        </div>
-        <div>
-          <dt>2+</dt>
-          <dd>años de experiencia Backend</dd>
-        </div>
-        <div>
-          <dt>E2E</dt>
-          <dd>con Playwright y Selenium</dd>
-        </div>
-      </dl>
+  <figure class="hero__portrait" aria-label="Retrato de Nicolás Alarcón Guzmán">
+    <div class="hero__portrait-orbit" aria-hidden="true"></div>
+    <img
+      src="/assets/images/nicolas-alarcon-photo.png"
+      width="408"
+      height="612"
+      alt="Nicolás Alarcón Guzmán, Frontend Developer"
+      fetchpriority="high"
+    >
+  </figure>
+
+  <div class="hero__bottom">
+    <div class="hero__intro">
+      <span>Frontend Developer · Angular · TypeScript · E2E</span>
+      <p>{{ profile.summary }}</p>
     </div>
 
-    <aside class="hero-card card reveal" aria-label="Perfil profesional destacado">
-      <div class="hero-card__photo-frame">
-        <img
-          class="hero-card__photo"
-          src="/assets/images/nicolas-alarcon-photo.png"
-          width="408"
-          height="612"
-          alt="Foto profesional de Nicolás Alarcón Guzmán"
-        >
-      </div>
-      <div class="hero-card__body">
-        <span>{{ profile.name }}</span>
-        <strong>{{ profile.role }}</strong>
-        <p>{{ profile.location }} · FrontEnd · APIs · Database · Testing</p>
-      </div>
-    </aside>
+    <div class="hero__actions" aria-label="Acciones principales">
+      <a class="button" href="#contacto">Contactarme</a>
+      <a class="button button--ghost" [href]="profile.cvUrl" download>Descargar CV</a>
+    </div>
   </div>
+
+  <a class="hero__scroll" href="#skills" aria-label="Ir al stack técnico">
+    <span>Scroll</span>
+    <i aria-hidden="true"></i>
+  </a>
 </section>

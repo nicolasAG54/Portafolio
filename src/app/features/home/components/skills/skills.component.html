@@ -1,22 +1,32 @@
-<section id="skills" class="section">
-  <div class="container">
-    <app-section-title
-      eyebrow="Skills"
-      title="Stack frontend para productos mantenibles"
-      description="Habilidades agrupadas por impacto práctico: desarrollo UI, arquitectura Angular, pruebas, herramientas y entendimiento backend."
-    />
-
-    <div class="skills-grid">
-      @for (group of skillGroups; track group.area) {
-        <article class="skill-card card">
-          <h3>{{ group.area }}</h3>
-          <div class="skill-card__tags">
-            @for (skill of group.skills; track skill) {
-              <span>{{ skill }}</span>
-            }
-          </div>
-        </article>
-      }
+<section id="skills" class="skills" [class.skills--paused]="isPaused()" aria-label="Stack técnico">
+  <div class="skills__intro container">
+    <p>Herramientas con las que convierto requisitos complejos en productos web claros.</p>
+    <div class="skills__control">
+      <span>Stack técnico</span>
+      <button type="button" [attr.aria-pressed]="isPaused()" aria-controls="skills" (click)="toggleMarquee()">
+        {{ isPaused() ? 'Reanudar movimiento' : 'Pausar movimiento' }}
+      </button>
     </div>
   </div>
+
+  @for (group of skillGroups; track group.area; let groupIndex = $index) {
+    <div class="marquee" [class.marquee--reverse]="groupIndex === 1">
+      <div class="marquee__track">
+        @for (skill of group.skills; track skill) {
+          <div class="skill-tile">
+            <small>{{ group.area }}</small>
+            <strong>{{ skill }}</strong>
+          </div>
+        }
+        <div class="marquee__duplicate" aria-hidden="true">
+          @for (skill of group.skills; track skill) {
+            <div class="skill-tile">
+              <small>{{ group.area }}</small>
+              <strong>{{ skill }}</strong>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  }
 </section>

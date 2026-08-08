@@ -1,28 +1,41 @@
-<section id="sobre-mi" class="section about">
-  <div class="container about__grid">
-    <div class="about__copy">
-      <app-section-title
-        eyebrow="Sobre mí"
-        title="Frontend orientado a producto, calidad y escalabilidad"
-        [description]="profile.recruiterPitch"
-      />
+<section id="sobre-mi" class="about" aria-labelledby="about-title">
+  <span class="about__orb about__orb--left" aria-hidden="true">UI</span>
+  <span class="about__orb about__orb--right" aria-hidden="true">TS</span>
 
-      <ul class="about__highlights" aria-label="Fortalezas profesionales">
-        <li>Interfaces empresariales claras, mantenibles y pensadas para usuarios reales.</li>
-        <li>Componentes reutilizables con Angular moderno, TypeScript, SCSS y buenas prácticas.</li>
-        <li>Mejora de UX/UI, consumo de APIs y pruebas E2E para reducir regresiones.</li>
-      </ul>
+  <div class="container about__inner">
+    <h2 id="about-title" class="display-title hero-heading">Sobre mí</h2>
+
+    <div class="about__story">
+      <p>{{ profile.recruiterPitch }}</p>
+      <a class="button" href="#contacto">Hablemos</a>
     </div>
 
-    <figure class="about__visual card">
+    <figure class="about__visual">
       <img
-        src="/assets/images/about-web-interface.png"
-        width="1254"
-        height="1254"
-        alt="Mockup minimalista de una interfaz web moderna"
+        src="/assets/images/about-web-interface-1100.jpg"
+        srcset="/assets/images/about-web-interface-780.jpg 780w, /assets/images/about-web-interface-1100.jpg 1100w"
+        sizes="(max-width: 720px) calc(100vw - 40px), 980px"
+        width="1100"
+        height="1100"
+        alt="Representación de una interfaz empresarial moderna"
         loading="lazy"
       >
-      <figcaption>UI empresarial · Angular · UX mantenible</figcaption>
+      <figcaption>Experiencia de producto · Arquitectura frontend · Calidad</figcaption>
     </figure>
+
+    <ul class="about__highlights" aria-label="Fortalezas profesionales">
+      <li>
+        <strong>Producto</strong>
+        <span>Interfaces claras para flujos de negocio reales.</span>
+      </li>
+      <li>
+        <strong>Ingeniería</strong>
+        <span>Componentes reutilizables y código mantenible.</span>
+      </li>
+      <li>
+        <strong>Calidad</strong>
+        <span>Pruebas E2E e integración cuidada con APIs.</span>
+      </li>
+    </ul>
   </div>
 </section>

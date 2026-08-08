@@ -1,38 +1,75 @@
-<section id="proyectos" class="section">
-  <div class="container">
-    <app-section-title
-      eyebrow="Proyectos"
-      title="Proyectos personales y colaborativos"
-      description="Con foco en calidad de código, arquitectura y experiencia de usuario. Cada proyecto refleja decisiones técnicas y aprendizajes relevantes para mi perfil frontend."
-    />
+<section id="proyectos" class="projects" aria-labelledby="projects-title">
+  <div class="container projects__heading">
+    <h2 id="projects-title" class="display-title hero-heading">Proyectos</h2>
+    <p>
+      Casos de estudio que reúnen decisiones de arquitectura, interfaz e integración. Se presentan
+      como conceptos de trabajo; no como productos públicos o clientes verificables.
+    </p>
+  </div>
 
-    <div class="projects-grid">
-      @for (project of projects; track project.name) {
-        <article class="project-card card">
+  <div class="container projects__stack">
+    @for (project of projects; track project.name; let index = $index) {
+      <article
+        class="project-card"
+        [class.project-card--violet]="index === 1"
+        [class.project-card--ember]="index === 2"
+        [style.top.px]="92 + index * 18"
+      >
+        <header class="project-card__header">
+          <span class="project-card__number">0{{ index + 1 }}</span>
           <div>
+            <small>{{ project.type }}</small>
             <h3>{{ project.name }}</h3>
+          </div>
+          <a class="button button--ghost" href="#contacto">Conversemos</a>
+        </header>
+
+        <div class="project-card__body">
+          <div class="project-card__copy">
             <p>{{ project.description }}</p>
             <strong>{{ project.impact }}</strong>
+            <div class="project-card__tags" aria-label="Tecnologías del caso de estudio">
+              @for (tech of project.technologies; track tech) {
+                <span>{{ tech }}</span>
+              }
+            </div>
           </div>
 
-          <div class="project-card__tags" aria-label="Tecnologias usadas">
-            @for (tech of project.technologies; track tech) {
-              <span>{{ tech }}</span>
-            }
-          </div>
+          <div class="project-visual" aria-label="Representación visual conceptual del proyecto">
+            <div class="project-visual__bar">
+              <span></span><span></span><span></span>
+              <small>Representación conceptual</small>
+            </div>
 
-          <div class="project-card__actions">
-            <a class="button button--ghost" [href]="project.codeUrl" target="_blank" rel="noreferrer">
-              Ver código
-            </a>
-            @if (project.demoUrl) {
-              <a class="button" [href]="project.demoUrl" target="_blank" rel="noreferrer">Ver demo</a>
+            @if (index === 0) {
+              <img
+                src="/assets/images/about-web-interface-1100.jpg"
+                srcset="/assets/images/about-web-interface-780.jpg 780w, /assets/images/about-web-interface-1100.jpg 1100w"
+                sizes="(max-width: 900px) calc(100vw - 80px), 62vw"
+                width="1100"
+                height="1100"
+                alt="Visual conceptual de un dashboard administrativo"
+                loading="lazy"
+              >
             } @else {
-              <button class="button button--disabled" type="button" disabled>Demo no disponible</button>
+              <div class="project-visual__canvas">
+                <aside>
+                  <i></i><i></i><i></i><i></i>
+                </aside>
+                <div class="project-visual__content">
+                  <div class="project-visual__headline"></div>
+                  <div class="project-visual__metrics">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="project-visual__table">
+                    <i></i><i></i><i></i><i></i>
+                  </div>
+                </div>
+              </div>
             }
           </div>
-        </article>
-      }
-    </div>
+        </div>
+      </article>
+    }
   </div>
 </section>

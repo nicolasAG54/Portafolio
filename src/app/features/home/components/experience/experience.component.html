@@ -1,19 +1,21 @@
-<section id="experiencia" class="section experience">
+<section id="experiencia" class="experience" aria-labelledby="experience-title">
   <div class="container">
-    <app-section-title
-      eyebrow="Experiencia"
-      title="Experiencia frontend aplicada a entornos reales"
-      description="Trabajos recientes donde he contribuido al desarrollo y mantenimiento de aplicaciones empresariales, con foco en calidad, escalabilidad y colaboración cercana con equipos multidisciplinarios."
-    />
+    <div class="experience__heading">
+      <h2 id="experience-title" class="display-title">Experiencia</h2>
+      <p>Entornos reales, equipos multidisciplinarios y productos que necesitan evolucionar sin perder estabilidad.</p>
+    </div>
 
     <div class="timeline">
-      @for (item of experience; track item.company + item.period) {
-        <article class="timeline__item card">
+      @for (item of experience; track item.company + item.period; let index = $index) {
+        <article class="timeline__item">
+          <span class="timeline__number">0{{ index + 1 }}</span>
+
           <div class="timeline__meta">
-            <span>{{ item.period }}</span>
             <strong>{{ item.company }}</strong>
+            <span>{{ item.period }}</span>
           </div>
-          <div>
+
+          <div class="timeline__content">
             <h3>{{ item.role }}</h3>
             <p>{{ item.summary }}</p>
             <ul>
@@ -21,7 +23,7 @@
                 <li>{{ achievement }}</li>
               }
             </ul>
-            <div class="timeline__stack">
+            <div class="timeline__stack" aria-label="Tecnologías utilizadas">
               @for (tech of item.stack; track tech) {
                 <span>{{ tech }}</span>
               }

@@ -1,36 +1,20 @@
-<section id="contacto" class="section contact">
-  <div class="container contact__grid">
-    <div>
-      <app-section-title
-        eyebrow="Contacto"
-        title="Hablemos de una oportunidad frontend"
-        description="Puedes buscarme en LinkedIn, GitHub o enviarme un mensaje directo. Respondo rápido y me interesa conocer sobre vacantes o proyectos donde pueda aportar con mi experiencia en Angular, desarrollo frontend y calidad de software."
-      />
+<section id="contacto" class="contact" aria-labelledby="contact-title">
+  <div class="container contact__inner">
+    <p class="contact__lead">¿Buscas un Frontend Developer que pueda entrar en contexto y aportar desde el producto hasta las pruebas?</p>
+    <h2 id="contact-title" class="display-title">Hablemos</h2>
 
-      <div class="contact__links">
-        @for (link of socialLinks; track link.label) {
-          <a [href]="link.href" target="_blank" rel="noreferrer" [attr.aria-label]="'Abrir ' + link.label">
-            <span>{{ link.label }}</span>
-            <strong>{{ link.value }}</strong>
-          </a>
-        }
-      </div>
+    <div class="contact__actions">
+      <a class="button button--dark" [href]="'mailto:' + profile.email">Enviar un email</a>
+      <a class="button button--dark" [href]="profile.cvUrl" download>Descargar CV</a>
     </div>
 
-    <form class="contact-form card" aria-label="Formulario visual de contacto">
-      <label>
-        Nombre
-        <input type="text" name="name" placeholder="Tu nombre" autocomplete="name">
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" placeholder="tu@email.com" autocomplete="email">
-      </label>
-      <label>
-        Mensaje
-        <textarea name="message" rows="5" placeholder="Cuéntame sobre la vacante o proyecto"></textarea>
-      </label>
-      <button class="button" type="button">Enviar mensaje</button>      
-    </form>
+    <div class="contact__links">
+      @for (link of socialLinks; track link.label) {
+        <a [href]="link.href" target="_blank" rel="noreferrer" [attr.aria-label]="'Abrir ' + link.label">
+          <span>{{ link.label }}</span>
+          <strong>{{ link.value }}</strong>
+        </a>
+      }
+    </div>
   </div>
 </section>

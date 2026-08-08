@@ -21,9 +21,8 @@ export interface ProjectItem {
   name: string;
   description: string;
   technologies: string[];
-  codeUrl: string;
-  demoUrl?: string;
   impact: string;
+  type: string;
 }
 
 export interface SocialLink {
@@ -34,21 +33,20 @@ export interface SocialLink {
 
 export const profile = {
   name: 'Nicolás Alarcón Guzmán',
-  role: 'Ingeniero de Sistemas | Frontend Developer',
+  shortName: 'Nicolás',
+  role: 'Frontend Developer · Angular',
   location: 'Colombia',
   email: 'ni-co123@hotmail.com',
   cvUrl: '/assets/cv/nicolas-alarcon-cv.pdf',
   headline: 'Frontend Developer especializado en Angular',
   summary:
-    'Mi experiencia se centra en aplicaciones empresariales y bacanrias, con atención a la mantenibilidad, integración con APIs y pruebas automatizadas.',
+    'Construyo y evoluciono aplicaciones empresariales con Angular, TypeScript y una atención constante a la experiencia de usuario, la mantenibilidad y la calidad.',
   recruiterPitch:
-    'Ingeniero de Sistemas con más de 4 años de experiencia creando y manteniendo aplicaciones web para entornos empresariales. Me enfoco en componentes reutilizables, flujos claros, integración con APIs y pruebas E2E que reducen regresiones.',
+    'Ingeniero de Sistemas con más de cuatro años de experiencia creando y manteniendo aplicaciones web para entornos empresariales. Me enfoco en componentes reutilizables, flujos claros, integración con APIs y pruebas E2E que ayudan a reducir regresiones.',
 };
 
 export const navItems: NavItem[] = [
-  { label: 'Inicio', fragment: 'inicio' },
   { label: 'Sobre mí', fragment: 'sobre-mi' },
-  { label: 'Skills', fragment: 'skills' },
   { label: 'Experiencia', fragment: 'experiencia' },
   { label: 'Proyectos', fragment: 'proyectos' },
   { label: 'Contacto', fragment: 'contacto' },
@@ -57,38 +55,38 @@ export const navItems: NavItem[] = [
 export const skillGroups: SkillGroup[] = [
   {
     area: 'Frontend',
-    skills: ['Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'SCSS', 'Tailwindcss', 'Bootstrap', 'Material'],
+    skills: ['Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'SCSS', 'Tailwind CSS', 'Bootstrap', 'Material'],
   },
   {
-    area: 'Backend y Database',
-    skills: ['Node.js', 'ASP.NET Core', 'Firebase', 'REST APIs','MySql', 'SQL Developer'],
-  },  
+    area: 'Backend & Data',
+    skills: ['Node.js', 'ASP.NET Core', 'Firebase', 'REST APIs', 'MySQL', 'Oracle SQL'],
+  },
   {
-    area: 'Testing',
+    area: 'Quality',
     skills: ['Playwright', 'Karate', 'Selenium', 'E2E Testing', 'Component Testing'],
-  },  
+  },
 ];
 
 export const experience: ExperienceItem[] = [
   {
     role: 'Frontend Developer',
     company: 'Qualita Corp',
-    period: 'Mar 2026 - Actualidad',
+    period: 'Mar 2026 — Actualidad',
     summary:
-      'Desarrollo en ASP.NET MVC 5, .NET Framework 4.8 con OWIN, SignalR, EF6 y Oracle, para aplicativos de Uso Bancario.',
+      'Desarrollo de aplicaciones bancarias con ASP.NET MVC 5, .NET Framework 4.8, OWIN, SignalR, EF6 y Oracle.',
     achievements: [
-      'Desarrollo y mantenimiento de aplicación web empresarial en ASP.NET MVC, C#, Razor.',
-      'integración a servicios REST, consultas Oracle SQL y optimización de rendimiento.',
-      'control de versiones en Azure Repos y análisis de calidad con SonarCloud.',
+      'Desarrollo y mantenimiento de una aplicación web empresarial con ASP.NET MVC, C# y Razor.',
+      'Integración de servicios REST, consultas Oracle SQL y optimización de rendimiento.',
+      'Control de versiones en Azure Repos y análisis de calidad con SonarCloud.',
     ],
-    stack: ['ASP.NET MVC / .NET Framework', 'Razor / .cshtml', 'jQuery', 'Bootstrap', 'Oracle Database'],
+    stack: ['ASP.NET MVC', '.NET Framework', 'Razor', 'jQuery', 'Bootstrap', 'Oracle'],
   },
   {
     role: 'Frontend Developer',
     company: 'Teleperformance',
-    period: 'Jul 2021 - Ago 2025',
+    period: 'Jul 2021 — Ago 2025',
     summary:
-      'Mantenimiento y evolucion de aplicaciones web internas para uso empresarial, con foco en estabilidad, escalabilidad y mejoras de UX.',
+      'Mantenimiento y evolución de aplicaciones web internas, con foco en estabilidad, escalabilidad y mejoras de experiencia de usuario.',
     achievements: [
       'Desarrollo y mantenimiento de más de 30 módulos con Angular, Vue y React.',
       'Integración con servicios Node.js y .NET para operaciones de negocio.',
@@ -100,72 +98,48 @@ export const experience: ExperienceItem[] = [
 
 export const projects: ProjectItem[] = [
   {
-    name: 'Dashboard administrativo en Angular',
+    name: 'Dashboard administrativo',
     description:
       'Panel para seguimiento de métricas, usuarios y estados operativos con filtros, tablas responsive y componentes reutilizables.',
     technologies: ['Angular', 'TypeScript', 'SCSS', 'Signals', 'REST APIs'],
-    codeUrl: 'https://github.com/editar/dashboard-angular',
-    demoUrl: '',
     impact:
-      'Pensado para equipos que necesitan lectura rapida de indicadores y acciones frecuentes.',
+      'Arquitectura pensada para que los equipos encuentren indicadores y acciones frecuentes con rapidez.',
+    type: 'Caso de estudio · Frontend',
   },
   {
-    name: 'Sistema de gestion empresarial',
+    name: 'Gestión empresarial',
     description:
-      'Módulo empresarial para administrar procesos internos, permisos, formularios y reportes con rutas protegidas.',
+      'Módulo para administrar procesos internos, permisos, formularios y reportes mediante rutas protegidas y flujos claros.',
     technologies: ['Angular', 'Reactive Forms', 'Guards', 'Interceptors', 'Playwright'],
-    codeUrl: 'https://github.com/editar/gestion-empresarial',
-    demoUrl: '',
-    impact: 'Arquitectura preparada para crecer por dominios y mantener reglas de negocio claras.',
+    impact: 'Estructura preparada para crecer por dominios y mantener reglas de negocio comprensibles.',
+    type: 'Caso de estudio · Producto',
   },
   {
-    name: 'Landing page responsive para negocio',
+    name: 'Angular + ASP.NET Core',
     description:
-      'Sitio comercial optimizado para captación de clientes, SEO básico, rendimiento y experiencia mobile-first.',
-    technologies: ['Angular', 'HTML5', 'SCSS', 'SEO', 'Responsive Design'],
-    codeUrl: 'https://github.com/editar/landing-responsive',
-    demoUrl: 'https://editar-demo.vercel.app',
-    impact: 'Carga rapida, mensajes claros y estructura lista para integrarse con analytics.',
-  },
-  {
-    name: 'Proyecto fullstack Angular + ASP.NET Core',
-    description:
-      'Aplicación con frontend Angular, API REST, autenticación y operaciones CRUD para gestionar información de negocio.',
+      'Aplicación fullstack con frontend Angular, API REST, autenticación y operaciones CRUD para información de negocio.',
     technologies: ['Angular', 'ASP.NET Core', 'REST APIs', 'SQL Server', 'Playwright'],
-    codeUrl: 'https://github.com/editar/angular-dotnet-fullstack',
-    demoUrl: '',
     impact:
-      'Demuestra criterio frontend con entendimiento del contrato backend y pruebas de flujo completo.',
+      'Una muestra de criterio frontend con comprensión del contrato backend y pruebas de flujo completo.',
+    type: 'Caso de estudio · Fullstack',
   },
 ];
 
 export const valuePoints = [
-  'Enfoque en código limpio, mantenible y fácil de revisar.',
+  'Código limpio, mantenible y fácil de revisar.',
   'Experiencia real con aplicaciones empresariales y flujos internos.',
   'Capacidad para mejorar interfaces existentes sin romper procesos activos.',
-  'Mentalidad de producto: entiendo al usuario, no solo la pantalla.',
-  'Aprendizaje constante y criterio para adoptar buenas prácticas de Angular moderno.',
+  'Mentalidad de producto: entender al usuario, no solo la pantalla.',
+  'Criterio para adoptar buenas prácticas de Angular moderno.',
 ];
 
 export const socialLinks: SocialLink[] = [
-  {
-    label: 'Email',
-    value: profile.email,
-    href: `mailto:${profile.email}`,
-  },
+  { label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
   {
     label: 'LinkedIn',
     value: 'linkedin.com/in/nicolasalarconguzman',
     href: 'https://www.linkedin.com/in/nicolasalarconguzman/',
   },
-  {
-    label: 'GitHub',
-    value: 'github.com/nicolasAG54',
-    href: 'https://github.com/nicolasAG54',
-  },
-  {
-    label: 'WhatsApp',
-    value: '+57 310 208 4697',
-    href: 'https://wa.me/573102084697',
-  },
+  { label: 'GitHub', value: 'github.com/nicolasAG54', href: 'https://github.com/nicolasAG54' },
+  { label: 'WhatsApp', value: '+57 310 208 4697', href: 'https://wa.me/573102084697' },
 ];
