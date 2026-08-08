@@ -86,6 +86,7 @@ El portafolio se comporta como un showreel de estudio digital: tipografía que o
 **Key Characteristics:**
 
 - Escala tipográfica extrema con una lectura inequívoca.
+- Retrato editorial arqueado, iluminado en violeta y naranja, como ancla humana del primer viewport.
 - Alternancia entre carbón inmersivo y papel cálido para marcar capítulos.
 - Bordes amplios y formas redondeadas solo en grandes superficies y controles.
 - Movimiento horizontal continuo y apilamiento vertical como gestos principales.
@@ -112,7 +113,7 @@ Las secciones usan ancho completo y padding fluido. El hero ocupa al menos el vi
 
 ## Elevation & Depth
 
-La profundidad procede de capas superpuestas, recortes, imágenes y cambios de plano. Las sombras son ambientales y oscuras; no se usan brillos neón ni glassmorphism repetido.
+La profundidad procede de capas superpuestas, recortes, imágenes y cambios de plano. Las sombras son ambientales y oscuras; no se usan brillos neón ni glassmorphism repetido. El retrato del hero flota con un ciclo lento de ocho segundos y un barrido de luz ocasional; ambos se detienen mediante `prefers-reduced-motion`.
 
 ## Shapes
 

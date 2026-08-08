@@ -40,6 +40,7 @@ La evaluación ocurre principalmente en navegador, a menudo desde un enlace comp
 ## Evidence on Hand
 
 - Foto profesional: `public/assets/images/nicolas-alarcon-photo.png`.
+- Retrato editorial derivado de la foto real para el hero: `public/assets/images/nicolas-hero-atelier-720.jpg` y `public/assets/images/nicolas-hero-atelier-1100.jpg`.
 - Visual de interfaz: `public/assets/images/about-web-interface.png`.
 - CV descargable: `public/assets/cv/nicolas-alarcon-cv.pdf`.
 - Experiencia, stack, perfil y datos de contacto: `src/app/data/portfolio.data.ts`.

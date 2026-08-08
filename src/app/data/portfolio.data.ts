@@ -40,9 +40,9 @@ export const profile = {
   cvUrl: '/assets/cv/nicolas-alarcon-cv.pdf',
   headline: 'Frontend Developer especializado en Angular',
   summary:
-    'Construyo y evoluciono aplicaciones empresariales con Angular, TypeScript y una atención constante a la experiencia de usuario, la mantenibilidad y la calidad.',
+    'Transformo procesos complejos en interfaces claras, rápidas de entender y fáciles de mantener. Especializado en Angular, TypeScript y calidad E2E.',
   recruiterPitch:
-    'Ingeniero de Sistemas con más de cuatro años de experiencia creando y manteniendo aplicaciones web para entornos empresariales. Me enfoco en componentes reutilizables, flujos claros, integración con APIs y pruebas E2E que ayudan a reducir regresiones.',
+    'Soy Ingeniero de Sistemas con más de cuatro años construyendo y evolucionando aplicaciones web empresariales. Trabajo desde la experiencia del usuario hasta la arquitectura de componentes, integrando APIs y pruebas E2E para que cada entrega sea clara, estable y mantenible.',
 };
 
 export const navItems: NavItem[] = [
@@ -73,7 +73,7 @@ export const experience: ExperienceItem[] = [
     company: 'Qualita Corp',
     period: 'Mar 2026 — Actualidad',
     summary:
-      'Desarrollo de aplicaciones bancarias con ASP.NET MVC 5, .NET Framework 4.8, OWIN, SignalR, EF6 y Oracle.',
+      'Desarrollo y evolución de aplicaciones bancarias sobre ASP.NET MVC 5 y .NET Framework 4.8, integradas con servicios REST y Oracle.',
     achievements: [
       'Desarrollo y mantenimiento de una aplicación web empresarial con ASP.NET MVC, C# y Razor.',
       'Integración de servicios REST, consultas Oracle SQL y optimización de rendimiento.',
@@ -86,7 +86,7 @@ export const experience: ExperienceItem[] = [
     company: 'Teleperformance',
     period: 'Jul 2021 — Ago 2025',
     summary:
-      'Mantenimiento y evolución de aplicaciones web internas, con foco en estabilidad, escalabilidad y mejoras de experiencia de usuario.',
+      'Desarrollo y mantenimiento de aplicaciones internas para operaciones empresariales, priorizando estabilidad, escalabilidad y experiencia de usuario.',
     achievements: [
       'Desarrollo y mantenimiento de más de 30 módulos con Angular, Vue y React.',
       'Integración con servicios Node.js y .NET para operaciones de negocio.',
@@ -100,37 +100,37 @@ export const projects: ProjectItem[] = [
   {
     name: 'Dashboard administrativo',
     description:
-      'Panel para seguimiento de métricas, usuarios y estados operativos con filtros, tablas responsive y componentes reutilizables.',
+      'Una superficie operativa para consultar indicadores, filtrar información y actuar sin perder el contexto del negocio.',
     technologies: ['Angular', 'TypeScript', 'SCSS', 'Signals', 'REST APIs'],
     impact:
-      'Arquitectura pensada para que los equipos encuentren indicadores y acciones frecuentes con rapidez.',
+      'La arquitectura prioriza lectura rápida, acciones frecuentes y componentes que pueden crecer con el producto.',
     type: 'Caso de estudio · Frontend',
   },
   {
     name: 'Gestión empresarial',
     description:
-      'Módulo para administrar procesos internos, permisos, formularios y reportes mediante rutas protegidas y flujos claros.',
+      'Un sistema modular para coordinar procesos internos, permisos, formularios y reportes mediante flujos protegidos.',
     technologies: ['Angular', 'Reactive Forms', 'Guards', 'Interceptors', 'Playwright'],
-    impact: 'Estructura preparada para crecer por dominios y mantener reglas de negocio comprensibles.',
+    impact: 'La propuesta separa responsabilidades por dominio y mantiene las reglas de negocio visibles para el equipo.',
     type: 'Caso de estudio · Producto',
   },
   {
     name: 'Angular + ASP.NET Core',
     description:
-      'Aplicación fullstack con frontend Angular, API REST, autenticación y operaciones CRUD para información de negocio.',
+      'Una experiencia end-to-end que conecta Angular con una API REST, autenticación y operaciones de negocio en ASP.NET Core.',
     technologies: ['Angular', 'ASP.NET Core', 'REST APIs', 'SQL Server', 'Playwright'],
     impact:
-      'Una muestra de criterio frontend con comprensión del contrato backend y pruebas de flujo completo.',
+      'El caso demuestra criterio frontend, comprensión del contrato backend y validación del flujo completo.',
     type: 'Caso de estudio · Fullstack',
   },
 ];
 
 export const valuePoints = [
-  'Código limpio, mantenible y fácil de revisar.',
-  'Experiencia real con aplicaciones empresariales y flujos internos.',
-  'Capacidad para mejorar interfaces existentes sin romper procesos activos.',
-  'Mentalidad de producto: entender al usuario, no solo la pantalla.',
-  'Criterio para adoptar buenas prácticas de Angular moderno.',
+  'Código claro que otro desarrollador puede continuar.',
+  'Experiencia real en productos empresariales y flujos internos.',
+  'Mejoras de interfaz sin romper procesos existentes.',
+  'Decisiones guiadas por el usuario y el contexto del negocio.',
+  'Calidad automatizada con pruebas E2E.',
 ];
 
 export const socialLinks: SocialLink[] = [

@@ -19,7 +19,7 @@ Usar solo la experiencia, foto, CV, stack y enlaces reales del repositorio. Los 
 
 ## Direction and memorable moment
 
-“Digital Atelier”: hero de pantalla completa con nombre monumental detrás del retrato, seguido por dos bandas cinéticas de stack. La experiencia cambia a un lienzo claro y los proyectos se apilan como capítulos sticky.
+“Digital Atelier”: hero de pantalla completa con nombre monumental detrás de un retrato editorial arqueado que flota suavemente, seguido por dos bandas cinéticas de stack. La experiencia cambia a un lienzo claro y los proyectos se apilan como capítulos sticky.
 
 ## Unresolved
 

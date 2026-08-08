@@ -51,70 +51,77 @@
 
 .hero__portrait {
   position: absolute;
-  bottom: -2px;
+  bottom: 16px;
   left: 50%;
   z-index: 2;
-  width: clamp(300px, 39vw, 570px);
+  width: clamp(300px, 34vw, 500px);
   margin: 0;
   transform: translateX(-50%);
   animation: portrait-in 950ms 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.hero__portrait::before {
+  position: absolute;
+  inset: 12% -12% 4%;
+  z-index: -2;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 72% 30%, rgba(182, 0, 168, 0.24), transparent 42%),
+    radial-gradient(circle at 24% 66%, rgba(190, 76, 0, 0.18), transparent 44%);
+  filter: blur(34px);
+  content: '';
+  animation: portrait-aura 8s 1.3s ease-in-out infinite;
+}
+
 .hero__portrait::after {
   position: absolute;
-  right: 8%;
-  bottom: -4%;
-  left: 8%;
+  right: 12%;
+  bottom: -3%;
+  left: 12%;
   z-index: -1;
-  height: 20%;
+  height: 14%;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.82);
-  filter: blur(24px);
+  background: rgba(0, 0, 0, 0.88);
+  filter: blur(28px);
   content: '';
+}
+
+.hero__portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 48% 48% 28px 28px / 36% 36% 28px 28px;
+  background: #030303;
+  box-shadow:
+    0 34px 70px rgba(0, 0, 0, 0.46),
+    0 0 0 1px rgba(215, 226, 234, 0.16) inset;
+  animation: portrait-float 8s 1.3s ease-in-out infinite;
+}
+
+.hero__portrait-frame::after {
+  position: absolute;
+  inset: -20% -75%;
+  z-index: 2;
+  background: linear-gradient(108deg, transparent 42%, rgba(255, 255, 255, 0.11) 50%, transparent 58%);
+  content: '';
+  pointer-events: none;
+  transform: translateX(-40%);
+  animation: portrait-sheen 7s 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 
 .hero__portrait img {
   width: 100%;
-  max-height: 70svh;
-  object-fit: contain;
-  object-position: center bottom;
-  filter: saturate(0.82) contrast(1.04) drop-shadow(0 24px 34px rgba(0, 0, 0, 0.42));
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.92) contrast(1.02);
+  transform: scale(1.015);
+  animation: portrait-breathe 8s 1.3s ease-in-out infinite;
+  transition: filter 300ms ease;
 }
 
-.hero__portrait-orbit {
-  position: absolute;
-  top: 16%;
-  left: 50%;
-  z-index: -1;
-  width: 92%;
-  aspect-ratio: 1;
-  border: 1px solid rgba(215, 226, 234, 0.2);
-  border-radius: 50%;
-  transform: translateX(-50%);
-}
-
-.hero__portrait-orbit::before,
-.hero__portrait-orbit::after {
-  position: absolute;
-  border-radius: 50%;
-  content: '';
-}
-
-.hero__portrait-orbit::before {
-  top: 12%;
-  right: 6%;
-  width: 13px;
-  height: 13px;
-  background: var(--magenta);
-  box-shadow: 0 8px 22px rgba(182, 0, 168, 0.44);
-}
-
-.hero__portrait-orbit::after {
-  bottom: 21%;
-  left: -1%;
-  width: 8px;
-  height: 8px;
-  background: var(--mist);
+.hero__portrait:hover img {
+  filter: saturate(1) contrast(1.04);
 }
 
 .hero__bottom {
@@ -193,6 +200,59 @@
   }
 }
 
+@keyframes portrait-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes portrait-breathe {
+  0%,
+  100% {
+    transform: scale(1.015);
+  }
+
+  50% {
+    transform: scale(1.035);
+  }
+}
+
+@keyframes portrait-aura {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes portrait-sheen {
+  0%,
+  60% {
+    opacity: 0;
+    transform: translateX(-38%);
+  }
+
+  72% {
+    opacity: 0.55;
+  }
+
+  88%,
+  100% {
+    opacity: 0;
+    transform: translateX(38%);
+  }
+}
+
 @keyframes bottom-in {
   from {
     opacity: 0;
@@ -206,7 +266,7 @@
   }
 
   .hero__portrait {
-    width: clamp(300px, 55vw, 500px);
+    width: clamp(300px, 50vw, 470px);
   }
 
   .hero__bottom {
@@ -238,12 +298,8 @@
   }
 
   .hero__portrait {
-    bottom: 155px;
-    width: min(92vw, 430px);
-  }
-
-  .hero__portrait img {
-    max-height: 520px;
+    bottom: 240px;
+    width: min(82vw, 340px);
   }
 
   .hero__bottom {
@@ -266,12 +322,12 @@
 
 @media (max-width: 390px) {
   .hero {
-    min-height: 760px;
+    min-height: 100svh;
   }
 
   .hero__portrait {
-    bottom: 148px;
-    width: 340px;
+    bottom: 240px;
+    width: min(78vw, 304px);
   }
 
   .hero__actions {
@@ -291,10 +347,6 @@
   .hero__portrait {
     bottom: 116px;
     width: min(76vw, 300px);
-  }
-
-  .hero__portrait img {
-    max-height: 430px;
   }
 
   .hero__intro span {
