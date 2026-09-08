@@ -4,8 +4,10 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./features/home/home-page.component').then((component) => component.HomePageComponent),
-    title: 'Nicolas Alarcon Guzman | Angular Frontend Developer',
+      import('./features/home/home-page.component').then(
+        (component) => component.HomePageComponent,
+      ),
+    title: 'Nicolás Alarcón Guzmán | Frontend Angular',
   },
   {
     path: '**',

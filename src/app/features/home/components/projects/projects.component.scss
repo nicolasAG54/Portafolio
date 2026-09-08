@@ -2,7 +2,7 @@
   position: relative;
   z-index: 6;
   margin-top: -1px;
-  padding: var(--section-pad) 0 clamp(120px, 16vw, 220px);
+  padding: var(--section-pad) 0 0;
   border-radius: clamp(32px, 5vw, 64px) clamp(32px, 5vw, 64px) 0 0;
   background: var(--bg);
 }
@@ -24,6 +24,7 @@
 .projects__stack {
   display: grid;
   gap: 22vh;
+  padding-bottom: clamp(120px, 16vw, 220px);
 }
 
 .project-card {
@@ -123,6 +124,7 @@
 
 .project-visual {
   position: relative;
+  height: clamp(430px, 54vh, 560px);
   min-height: 430px;
   overflow: hidden;
   border-radius: clamp(20px, 3vw, 38px);
@@ -248,20 +250,6 @@
   background: linear-gradient(90deg, rgba(215, 226, 234, 0.4) 35%, rgba(215, 226, 234, 0.1) 35%);
 }
 
-@supports (animation-timeline: view()) {
-  .project-card {
-    animation: card-scale linear both;
-    animation-range: exit 0% exit 70%;
-    animation-timeline: view();
-  }
-
-  @keyframes card-scale {
-    to {
-      scale: 0.95;
-    }
-  }
-}
-
 @media (max-width: 900px) {
   .projects__heading {
     grid-template-columns: 1fr;
@@ -302,6 +290,7 @@
   .project-visual,
   .project-visual > img,
   .project-visual__canvas {
+    height: 300px;
     min-height: 300px;
   }
 

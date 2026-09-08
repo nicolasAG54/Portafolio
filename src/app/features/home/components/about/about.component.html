@@ -12,14 +12,18 @@
 
     <figure class="about__visual">
       <img
-        src="/assets/images/about-web-interface-1100.jpg"
-        srcset="/assets/images/about-web-interface-780.jpg 780w, /assets/images/about-web-interface-1100.jpg 1100w"
+        src="/assets/images/about-web-interface-1100.webp"
+        srcset="
+          /assets/images/about-web-interface-780.webp   780w,
+          /assets/images/about-web-interface-1100.webp 1100w
+        "
         sizes="(max-width: 720px) calc(100vw - 40px), 980px"
         width="1100"
         height="1100"
         alt="Representación de una interfaz empresarial moderna"
         loading="lazy"
-      >
+        decoding="async"
+      />
       <figcaption>Interfaces empresariales · Integración · Pruebas E2E</figcaption>
     </figure>
 

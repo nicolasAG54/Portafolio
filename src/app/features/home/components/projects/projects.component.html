@@ -43,27 +43,25 @@
 
             @if (index === 0) {
               <img
-                src="/assets/images/about-web-interface-1100.jpg"
-                srcset="/assets/images/about-web-interface-780.jpg 780w, /assets/images/about-web-interface-1100.jpg 1100w"
+                src="/assets/images/about-web-interface-1100.webp"
+                srcset="
+                  /assets/images/about-web-interface-780.webp   780w,
+                  /assets/images/about-web-interface-1100.webp 1100w
+                "
                 sizes="(max-width: 900px) calc(100vw - 80px), 62vw"
                 width="1100"
                 height="1100"
                 alt="Visual conceptual de un dashboard administrativo"
                 loading="lazy"
-              >
+                decoding="async"
+              />
             } @else {
               <div class="project-visual__canvas">
-                <aside>
-                  <i></i><i></i><i></i><i></i>
-                </aside>
+                <aside><i></i><i></i><i></i><i></i></aside>
                 <div class="project-visual__content">
                   <div class="project-visual__headline"></div>
-                  <div class="project-visual__metrics">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <div class="project-visual__table">
-                    <i></i><i></i><i></i><i></i>
-                  </div>
+                  <div class="project-visual__metrics"><span></span><span></span><span></span></div>
+                  <div class="project-visual__table"><i></i><i></i><i></i><i></i></div>
                 </div>
               </div>
             }

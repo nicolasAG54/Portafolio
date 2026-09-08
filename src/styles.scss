@@ -64,6 +64,17 @@ img {
   max-width: 100%;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 button {
   border: 0;
 }
@@ -109,9 +120,16 @@ section {
   align-items: center;
   justify-content: center;
   padding: 13px 26px;
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.38);
   border-radius: 999px;
-  background: linear-gradient(123deg, #18011f 7%, var(--magenta) 37%, var(--violet) 72%, var(--ember) 100%);
+  background: linear-gradient(
+    123deg,
+    #18011f 7%,
+    var(--magenta) 37%,
+    var(--violet) 72%,
+    var(--ember) 100%
+  );
+  background-clip: padding-box;
   color: #ffffff;
   font-size: 0.82rem;
   font-weight: 600;
@@ -120,7 +138,7 @@ section {
   text-transform: uppercase;
   box-shadow:
     0 12px 30px rgba(181, 1, 167, 0.2),
-    4px 4px 12px rgba(118, 33, 176, 0.65) inset;
+    0 1px 0 rgba(255, 255, 255, 0.24) inset;
   cursor: pointer;
   transition:
     transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -132,7 +150,7 @@ section {
   transform: translateY(-3px);
   box-shadow:
     0 18px 36px rgba(181, 1, 167, 0.28),
-    4px 4px 12px rgba(118, 33, 176, 0.65) inset;
+    0 1px 0 rgba(255, 255, 255, 0.28) inset;
 }
 
 .button--ghost {

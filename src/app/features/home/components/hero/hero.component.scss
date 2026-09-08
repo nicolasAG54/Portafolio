@@ -54,7 +54,7 @@
   bottom: 16px;
   left: 50%;
   z-index: 2;
-  width: clamp(300px, 34vw, 500px);
+  width: clamp(500px, 26vw, 380px);
   margin: 0;
   transform: translateX(-50%);
   animation: portrait-in 950ms 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -91,22 +91,8 @@
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 48% 48% 28px 28px / 36% 36% 28px 28px;
-  background: #030303;
-  box-shadow:
-    0 34px 70px rgba(0, 0, 0, 0.46),
-    0 0 0 1px rgba(215, 226, 234, 0.16) inset;
+  background: transparent;
   animation: portrait-float 8s 1.3s ease-in-out infinite;
-}
-
-.hero__portrait-frame::after {
-  position: absolute;
-  inset: -20% -75%;
-  z-index: 2;
-  background: linear-gradient(108deg, transparent 42%, rgba(255, 255, 255, 0.11) 50%, transparent 58%);
-  content: '';
-  pointer-events: none;
-  transform: translateX(-40%);
-  animation: portrait-sheen 7s 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 
 .hero__portrait img {
@@ -235,24 +221,6 @@
   }
 }
 
-@keyframes portrait-sheen {
-  0%,
-  60% {
-    opacity: 0;
-    transform: translateX(-38%);
-  }
-
-  72% {
-    opacity: 0.55;
-  }
-
-  88%,
-  100% {
-    opacity: 0;
-    transform: translateX(38%);
-  }
-}
-
 @keyframes bottom-in {
   from {
     opacity: 0;
@@ -266,7 +234,7 @@
   }
 
   .hero__portrait {
-    width: clamp(300px, 50vw, 470px);
+    width: clamp(250px, 38vw, 340px);
   }
 
   .hero__bottom {
@@ -299,7 +267,7 @@
 
   .hero__portrait {
     bottom: 240px;
-    width: min(82vw, 340px);
+    width: min(64vw, 260px);
   }
 
   .hero__bottom {
@@ -327,7 +295,7 @@
 
   .hero__portrait {
     bottom: 240px;
-    width: min(78vw, 304px);
+    width: min(62vw, 245px);
   }
 
   .hero__actions {
@@ -346,7 +314,7 @@
 
   .hero__portrait {
     bottom: 116px;
-    width: min(76vw, 300px);
+    width: min(60vw, 240px);
   }
 
   .hero__intro span {
