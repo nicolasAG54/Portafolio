@@ -24,7 +24,16 @@
 
     <div id="main-menu" class="nav__links" [class.nav__links--open]="isMenuOpen()">
       @for (item of navItems; track item.fragment) {
-        <a [href]="'#' + item.fragment" (click)="closeMenu()">{{ item.label }}</a>
+        <a
+          [href]="'#' + item.fragment"
+          [class.nav__link--featured]="item.fragment === 'proyectos'"
+          (click)="closeMenu()"
+        >
+          {{ item.label }}
+          @if (item.fragment === 'proyectos') {
+            <small aria-hidden="true">07</small>
+          }
+        </a>
       }
     </div>
 

@@ -2,8 +2,8 @@
   <div class="container projects__heading">
     <h2 id="projects-title" class="display-title hero-heading">Proyectos</h2>
     <p>
-      Casos de estudio propios donde traduzco problemas de operación en decisiones concretas de
-      arquitectura, interfaz e integración.
+      Una selección de sitios y experiencias digitales publicados, creados para sectores, públicos y
+      objetivos de negocio distintos.
     </p>
   </div>
 
@@ -11,9 +11,9 @@
     @for (project of projects; track project.name; let index = $index) {
       <article
         class="project-card"
-        [class.project-card--violet]="index === 1"
-        [class.project-card--ember]="index === 2"
-        [style.top.px]="92 + index * 18"
+        [class.project-card--violet]="index % 3 === 1"
+        [class.project-card--ember]="index % 3 === 2"
+        [style.top.px]="92 + index * 12"
       >
         <header class="project-card__header">
           <span class="project-card__number">0{{ index + 1 }}</span>
@@ -21,51 +21,52 @@
             <small>{{ project.type }}</small>
             <h3>{{ project.name }}</h3>
           </div>
-          <a class="button button--ghost" href="#contacto">Hablar del proyecto</a>
+          <a
+            class="button button--ghost project-card__link"
+            [href]="project.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="'Ver ' + project.name + ' en una nueva pestaña'"
+          >
+            Ver proyecto
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M5 11 11 5M6 5h5v5" />
+            </svg>
+          </a>
         </header>
 
         <div class="project-card__body">
           <div class="project-card__copy">
             <p>{{ project.description }}</p>
             <strong>{{ project.impact }}</strong>
-            <div class="project-card__tags" aria-label="Tecnologías del caso de estudio">
+            <div class="project-card__tags" aria-label="Tecnologías y capacidades del proyecto">
               @for (tech of project.technologies; track tech) {
                 <span>{{ tech }}</span>
               }
             </div>
           </div>
 
-          <div class="project-visual" aria-label="Representación visual conceptual del proyecto">
+          <a
+            class="project-visual"
+            [href]="project.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="'Abrir ' + project.name + ' en una nueva pestaña'"
+          >
             <div class="project-visual__bar">
               <span></span><span></span><span></span>
-              <small>Representación conceptual</small>
+              <small>{{ project.url.replace('https://', '').replace('/', '') }}</small>
             </div>
-
-            @if (index === 0) {
-              <img
-                src="/assets/images/about-web-interface-1100.webp"
-                srcset="
-                  /assets/images/about-web-interface-780.webp   780w,
-                  /assets/images/about-web-interface-1100.webp 1100w
-                "
-                sizes="(max-width: 900px) calc(100vw - 80px), 62vw"
-                width="1100"
-                height="1100"
-                alt="Visual conceptual de un dashboard administrativo"
-                loading="lazy"
-                decoding="async"
-              />
-            } @else {
-              <div class="project-visual__canvas">
-                <aside><i></i><i></i><i></i><i></i></aside>
-                <div class="project-visual__content">
-                  <div class="project-visual__headline"></div>
-                  <div class="project-visual__metrics"><span></span><span></span><span></span></div>
-                  <div class="project-visual__table"><i></i><i></i><i></i><i></i></div>
-                </div>
-              </div>
-            }
-          </div>
+            <img
+              [src]="project.image"
+              width="1440"
+              height="900"
+              [alt]="project.imageAlt"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="project-visual__visit" aria-hidden="true">Visitar sitio</span>
+          </a>
         </div>
       </article>
     }

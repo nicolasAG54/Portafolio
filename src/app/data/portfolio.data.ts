@@ -23,6 +23,9 @@ export interface ProjectItem {
   technologies: string[];
   impact: string;
   type: string;
+  url: string;
+  image: string;
+  imageAlt: string;
 }
 
 export interface SocialLink {
@@ -55,7 +58,17 @@ export const navItems: NavItem[] = [
 export const skillGroups: SkillGroup[] = [
   {
     area: 'Frontend',
-    skills: ['Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'SCSS', 'Tailwind CSS', 'Bootstrap', 'Material'],
+    skills: [
+      'Angular',
+      'TypeScript',
+      'JavaScript',
+      'HTML5',
+      'CSS3',
+      'SCSS',
+      'Tailwind CSS',
+      'Bootstrap',
+      'Material',
+    ],
   },
   {
     area: 'Backend & Data',
@@ -98,30 +111,90 @@ export const experience: ExperienceItem[] = [
 
 export const projects: ProjectItem[] = [
   {
-    name: 'Dashboard administrativo',
+    name: 'Girardot Express',
     description:
-      'Una superficie operativa para consultar indicadores, filtrar información y actuar sin perder el contexto del negocio.',
-    technologies: ['Angular', 'TypeScript', 'SCSS', 'Signals', 'REST APIs'],
+      'Sitio de lanzamiento para un centro comercial, enfocado en presentar el proyecto, atraer marcas y comunicar su próxima apertura.',
+    technologies: ['JavaScript', 'Leaflet', 'Responsive', 'SEO'],
     impact:
-      'La arquitectura prioriza lectura rápida, acciones frecuentes y componentes que pueden crecer con el producto.',
-    type: 'Caso de estudio · Frontend',
+      'Integra cuenta regresiva, galería, información comercial, cambio de idioma y ubicación en una experiencia inmersiva.',
+    type: 'Experiencia comercial',
+    url: 'https://girardotexpress.netlify.app/',
+    image: '/assets/images/projects/girardot-express.webp',
+    imageAlt: 'Página principal de Girardot Express con visual arquitectónico del centro comercial',
   },
   {
-    name: 'Gestión empresarial',
+    name: 'Tu Clínica Veterinaria',
     description:
-      'Un sistema modular para coordinar procesos internos, permisos, formularios y reportes mediante flujos protegidos.',
-    technologies: ['Angular', 'Reactive Forms', 'Guards', 'Interceptors', 'Playwright'],
-    impact: 'La propuesta separa responsabilidades por dominio y mantiene las reglas de negocio visibles para el equipo.',
-    type: 'Caso de estudio · Producto',
+      'Plantilla web profesional para clínicas veterinarias, con una ruta clara desde la presentación de servicios hasta el contacto.',
+    technologies: ['Astro', 'Responsive', 'Accesibilidad', 'SEO'],
+    impact:
+      'Organiza servicios, equipo, instalaciones, guías y atención prioritaria para facilitar la decisión de cada familia.',
+    type: 'Plantilla sectorial',
+    url: 'https://veterinariaplantilla.netlify.app/',
+    image: '/assets/images/projects/clinica-veterinaria.webp',
+    imageAlt:
+      'Página principal de una plantilla para clínica veterinaria con equipo médico y un perro',
   },
   {
-    name: 'Angular + ASP.NET Core',
+    name: 'Corporación los Yarumos',
     description:
-      'Una experiencia end-to-end que conecta Angular con una API REST, autenticación y operaciones de negocio en ASP.NET Core.',
-    technologies: ['Angular', 'ASP.NET Core', 'REST APIs', 'SQL Server', 'Playwright'],
+      'Plataforma institucional para comunicar trayectoria, proyectos de desarrollo rural, territorios y conocimiento aplicado.',
+    technologies: ['Angular', 'TypeScript', 'Cartografía', 'Accesibilidad'],
     impact:
-      'El caso demuestra criterio frontend, comprensión del contrato backend y validación del flujo completo.',
-    type: 'Caso de estudio · Fullstack',
+      'Conecta evidencia institucional, expedientes de proyecto, publicaciones y navegación territorial en una sola experiencia.',
+    type: 'Plataforma institucional',
+    url: 'https://corpoyarumos.netlify.app/',
+    image: '/assets/images/projects/corpoyarumos.webp',
+    imageAlt: 'Página principal de Corporación los Yarumos sobre desarrollo rural y territorio',
+  },
+  {
+    name: 'Plantilla para centros comerciales',
+    description:
+      'Plantilla web para centros comerciales, diseñada para presentar locales, eventos, gastronomía, entretenimiento y servicios.',
+    technologies: ['Angular', 'TypeScript', 'Directorio', 'Responsive'],
+    impact:
+      'Integra directorio con filtros, agenda, experiencias, información de visita y rutas dentro de una estructura personalizable.',
+    type: 'Plantilla comercial',
+    url: 'https://plantillacentrocomercial.netlify.app/',
+    image: '/assets/images/projects/centro-comercial.webp',
+    imageAlt: 'Vista demostrativa de una plantilla web para centros comerciales',
+  },
+  {
+    name: 'Plantilla para agencias de viajes',
+    description:
+      'Plantilla web para agencias de viajes que permite presentar destinos, fechas de salida y paquetes nacionales e internacionales.',
+    technologies: ['Astro', 'Responsive', 'SEO', 'WhatsApp'],
+    impact:
+      'Organiza la oferta turística con una dirección visual reconocible y acceso directo a cotización por WhatsApp.',
+    type: 'Plantilla turística',
+    url: 'https://turismogirardot.netlify.app/',
+    image: '/assets/images/projects/agencia-viajes.webp',
+    imageAlt:
+      'Vista demostrativa de una plantilla para agencias de viajes sobre el Caribe colombiano',
+  },
+  {
+    name: 'CozyPaws',
+    description:
+      'Concepto de tienda digital para mascotas con una interfaz cálida, visual y centrada en descubrir productos.',
+    technologies: ['Angular', 'TypeScript', 'E-commerce', 'UI Motion'],
+    impact:
+      'Explora una experiencia de catálogo con búsqueda, favoritos, carrito y una composición editorial orientada al producto.',
+    type: 'Concepto e-commerce',
+    url: 'https://tiendaveterinariabogota.netlify.app/',
+    image: '/assets/images/projects/cozypaws.webp',
+    imageAlt: 'Página principal de CozyPaws con perros, un gato y productos para mascotas',
+  },
+  {
+    name: 'Mesa Demo',
+    description:
+      'Plantilla gastronómica que convierte una carta de restaurante en una experiencia digital visual y personalizable.',
+    technologies: ['JavaScript', 'Responsive', 'Carta digital', 'SEO'],
+    impact:
+      'Organiza categorías, platos, precios y espacios de conversión con una presentación cuidada para abrir el apetito.',
+    type: 'Plantilla gastronómica',
+    url: 'https://restauranteplantilla.netlify.app/',
+    image: '/assets/images/projects/mesa-demo.webp',
+    imageAlt: 'Página principal de Mesa Demo con un plato de carne, vegetales y precio destacado',
   },
 ];
 
