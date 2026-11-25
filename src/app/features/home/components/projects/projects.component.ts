@@ -1,5 +1,5 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, DestroyRef, ElementRef, afterNextRender, inject, viewChildren } from '@angular/core';
+import { Component, DestroyRef, ElementRef, afterNextRender, inject, viewChild } from '@angular/core';
 import { PortfolioLanguageService } from '../../../../core/services/portfolio-language.service';
 
 import { projects } from '../../../../data/portfolio.data';
@@ -13,28 +13,23 @@ import { projects } from '../../../../data/portfolio.data';
 export class ProjectsComponent {
   protected readonly locale = inject(PortfolioLanguageService);
   protected readonly projects = projects;
-  private readonly cards = viewChildren<ElementRef<HTMLElement>>('projectCard');
+  private readonly stack = viewChild.required<ElementRef<HTMLElement>>('projectStack');
 
   constructor() {
     const destroyRef = inject(DestroyRef);
 
     afterNextRender(() => {
-      // Let a tall card reveal its bottom before it settles into the stack.
-      const observer = new ResizeObserver((entries) => {
-        for (const { target, borderBoxSize } of entries) {
-          (target as HTMLElement).style.setProperty(
-            '--project-card-height',
-            `${borderBoxSize[0].blockSize}px`,
-          );
-        }
-      });
-
-      for (const { nativeElement } of this.cards()) {
-        if (nativeElement.classList.contains('project-card--featured')) {
-          observer.observe(nativeElement, { box: 'border-box' });
-        }
+      const stack = this.stack().nativeElement;
+      const firstCard = stack.firstElementChild;
+      if (!firstCard) {
+        return;
       }
 
+      // Equal grid rows share the same height and must clear the same viewport edge.
+      const observer = new ResizeObserver(([entry]) => {
+        stack.style.setProperty('--project-card-height', `${entry.borderBoxSize[0].blockSize}px`);
+      });
+      observer.observe(firstCard, { box: 'border-box' });
       destroyRef.onDestroy(() => observer.disconnect());
     });
   }

@@ -4,12 +4,10 @@
     <p>{{ locale.text('Automatización de procesos y desarrollo web para operaciones, visitantes y equipos comerciales.') }}</p>
   </div>
 
-  <div class="container projects__stack">
+  <div #projectStack class="container projects__stack">
     @for (project of projects; track project.name; let index = $index) {
       <article
-        #projectCard
         class="project-card"
-        [class.project-card--featured]="project.kind !== 'website'"
         [class.project-card--violet]="index % 3 === 1"
         [class.project-card--ember]="index % 3 === 2"
         [style.--project-stack-top]="(92 + index * 12) + 'px'"
@@ -37,8 +35,8 @@
           }
         </header>
 
-        <div class="project-card__body" [class.project-card__body--versions]="project.kind === 'versions'">
-          <div class="project-card__copy" [class.project-card__copy--wide]="project.kind === 'versions'">
+        <div class="project-card__body">
+          <div class="project-card__copy">
             <p>{{ locale.text(project.description) }}</p>
             @if (project.impact) {
               <strong>{{ locale.text(project.impact) }}</strong>
