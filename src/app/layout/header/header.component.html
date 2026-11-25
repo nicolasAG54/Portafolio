@@ -38,22 +38,26 @@
     </div>
 
     <div class="nav__actions">
-      <button
-        class="nav__language"
-        type="button"
-        [attr.aria-label]="locale.isEnglish() ? 'Cambiar a español' : 'Switch to English'"
-        [attr.lang]="locale.isEnglish() ? 'es' : 'en'"
-        (click)="locale.toggle()"
-      >
-        <img
-          class="nav__flag"
-          [src]="locale.isEnglish() ? '/assets/flags/co.svg' : '/assets/flags/us.svg'"
-          alt=""
-          width="20"
-          height="14"
-        />
-        {{ locale.isEnglish() ? 'ES' : 'EN' }}
-      </button>
+      <div class="nav__language-control">
+        @let languageHint = locale.isEnglish() ? 'Cambiar a español' : 'Cambiar a inglés';
+        <button
+          class="nav__language"
+          type="button"
+          lang="es"
+          [attr.aria-label]="languageHint"
+          (click)="locale.toggle()"
+        >
+          <img
+            class="nav__flag"
+            [src]="locale.isEnglish() ? '/assets/flags/co.svg' : '/assets/flags/us.svg'"
+            alt=""
+            width="20"
+            height="14"
+          />
+          {{ locale.isEnglish() ? 'ES' : 'EN' }}
+        </button>
+        <span class="nav__language-tooltip" lang="es" aria-hidden="true">{{ languageHint }}</span>
+      </div>
       <a class="nav__cv" [href]="locale.cvUrl()" download>{{ locale.text('Descargar CV') }}</a>
     </div>
   </nav>

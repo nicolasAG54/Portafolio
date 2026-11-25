@@ -147,6 +147,10 @@
   justify-self: end;
 }
 
+.nav__language-control {
+  position: relative;
+}
+
 .nav__language {
   display: inline-flex;
   min-width: 38px;
@@ -175,6 +179,29 @@
 .nav__language:focus-visible {
   outline: 2px solid var(--mist);
   outline-offset: 2px;
+}
+
+.nav__language-tooltip {
+  position: absolute;
+  inset-block-start: calc(100% + 6px);
+  inset-inline-end: 0;
+  z-index: 1;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg-raised);
+  color: var(--mist);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 120ms ease-out;
+}
+
+.nav__language-control:hover .nav__language-tooltip,
+.nav__language:focus-visible + .nav__language-tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 .menu-button {
