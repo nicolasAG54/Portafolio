@@ -44,6 +44,17 @@
                 <span>{{ tech }}</span>
               }
             </div>
+            @if (project.sourceUrl; as sourceUrl) {
+              <a
+                class="project-card__source"
+                [href]="sourceUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                [attr.aria-label]="'Ver la implementación en Angular de ' + project.name + ' en GitHub (nueva pestaña)'"
+              >
+                Implementación en Angular en GitHub
+              </a>
+            }
           </div>
 
           <a

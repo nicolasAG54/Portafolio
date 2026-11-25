@@ -24,6 +24,7 @@ export interface ProjectItem {
   impact: string;
   type: string;
   url: string;
+  sourceUrl?: string;
   image: string;
   imageAlt: string;
 }
@@ -43,9 +44,9 @@ export const profile = {
   cvUrl: '/assets/cv/nicolas-alarcon-cv.pdf',
   headline: 'Frontend Developer especializado en Angular',
   summary:
-    'Transformo procesos complejos en interfaces claras, rápidas de entender y fáciles de mantener. Especializado en Angular, TypeScript y calidad E2E.',
+    'Desarrollo aplicaciones empresariales con Angular y TypeScript. Integro APIs, automatizo pruebas con Playwright y simplifico procesos documentales con Python.',
   recruiterPitch:
-    'Soy Ingeniero de Sistemas con más de cuatro años construyendo y evolucionando aplicaciones web empresariales. Trabajo desde la experiencia del usuario hasta la arquitectura de componentes, integrando APIs y pruebas E2E para que cada entrega sea clara, estable y mantenible.',
+    'Soy Ingeniero de Sistemas con más de cuatro años desarrollando aplicaciones web empresariales. He integrado servicios en Angular y .NET, automatizado pruebas con Playwright y creado herramientas en Python para generar documentos a partir de datos.',
 };
 
 export const navItems: NavItem[] = [
@@ -75,16 +76,28 @@ export const skillGroups: SkillGroup[] = [
     skills: ['Node.js', 'ASP.NET Core', 'Firebase', 'REST APIs', 'MySQL', 'Oracle SQL'],
   },
   {
-    area: 'Quality',
-    skills: ['Playwright', 'Karate', 'Selenium', 'E2E Testing', 'Component Testing'],
+    area: 'Quality & Automation',
+    skills: ['Playwright', 'Karate', 'Selenium', 'E2E Testing', 'Python', 'OpenAI API', 'Excel'],
   },
 ];
 
 export const experience: ExperienceItem[] = [
   {
-    role: 'Frontend Developer',
+    role: 'Prestación de servicios en automatización',
+    company: 'Corpoyarumos',
+    period: 'Abr 2026 — Actualidad',
+    summary:
+      'Automaticé etapas de un proceso documental que debía entregar a tiempo diagnósticos y planes de fortalecimiento.',
+    achievements: [
+      'Automaticé con Python y la API de OpenAI la generación de diagnósticos. El tiempo pasó de unos 30 a 2 minutos por diagnóstico y el equipo entregó 548 en el plazo acordado.',
+      'Extendí la automatización a los 548 planes derivados de esos diagnósticos y al diseño curricular de cada plan aprobado.',
+    ],
+    stack: ['Python', 'OpenAI API', 'Excel'],
+  },
+  {
+    role: 'Desarrollador de software',
     company: 'Qualita Corp',
-    period: 'Mar 2026 — Actualidad',
+    period: 'Mar 2026 — Oct 2026',
     summary:
       'Desarrollo y evolución de aplicaciones bancarias sobre ASP.NET MVC 5 y .NET Framework 4.8, integradas con servicios REST y Oracle.',
     achievements: [
@@ -97,7 +110,7 @@ export const experience: ExperienceItem[] = [
   {
     role: 'Frontend Developer',
     company: 'Teleperformance',
-    period: 'Jul 2021 — Ago 2025',
+    period: 'Jul 2021 — Oct 2025',
     summary:
       'Desarrollo y mantenimiento de aplicaciones internas para operaciones empresariales, priorizando estabilidad, escalabilidad y experiencia de usuario.',
     achievements: [
@@ -119,6 +132,7 @@ export const projects: ProjectItem[] = [
       'Integra cuenta regresiva, galería, información comercial, cambio de idioma y ubicación en una experiencia inmersiva.',
     type: 'Experiencia comercial',
     url: 'https://girardotexpress.netlify.app/',
+    sourceUrl: 'https://github.com/nicolasAG54/girardot-express-angular',
     image: '/assets/images/projects/girardot-express.webp',
     imageAlt: 'Página principal de Girardot Express con visual arquitectónico del centro comercial',
   },

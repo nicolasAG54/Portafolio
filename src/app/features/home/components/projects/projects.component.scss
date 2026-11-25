@@ -144,6 +144,14 @@
   font-weight: 500;
 }
 
+.project-card__source {
+  align-self: flex-start;
+  margin-top: 16px;
+  color: var(--mist);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .project-visual {
   --project-visual-radius: clamp(20px, 3vw, 38px);
 
