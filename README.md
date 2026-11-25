@@ -2,7 +2,7 @@
 
 Systems Engineer based in Colombia. I build business applications with Angular and TypeScript, integrate REST APIs and .NET services, and automate document workflows with Python.
 
-[Live portfolio](https://nicolasalarconguzman.site/) · [LinkedIn](https://www.linkedin.com/in/nicolasalarconguzman/)
+[Live portfolio](https://nicolasalarconguzman.site/) · [English portfolio and resume](https://nicolasalarconguzman.site/en/) · [LinkedIn](https://www.linkedin.com/in/nicolasalarconguzman/)
 
 ## Selected work
 

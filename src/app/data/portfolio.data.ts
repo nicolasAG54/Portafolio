@@ -38,13 +38,13 @@ export interface SocialLink {
 export const profile = {
   name: 'Nicolás Alarcón Guzmán',
   shortName: 'Nicolás',
-  role: 'Frontend Developer · Angular',
+  role: 'Full-stack Developer',
   location: 'Colombia',
   email: 'ni-co123@hotmail.com',
-  cvUrl: '/assets/cv/nicolas-alarcon-cv.pdf',
-  headline: 'Frontend Developer especializado en Angular',
+  cvUrl: '/assets/cv/nicolas-alarcon-resume-en.pdf',
+  headline: 'Desarrollo fullstack y automatización',
   summary:
-    'Desarrollo aplicaciones empresariales con Angular y TypeScript. Integro APIs, automatizo pruebas con Playwright y simplifico procesos documentales con Python.',
+    'Construyo aplicaciones web, integro APIs y automatizo procesos. Trabajo con TypeScript, .NET y Python.',
   recruiterPitch:
     'Soy Ingeniero de Sistemas con más de cuatro años desarrollando aplicaciones web empresariales. He integrado servicios en Angular y .NET, automatizado pruebas con Playwright y creado herramientas en Python para generar documentos a partir de datos.',
 };

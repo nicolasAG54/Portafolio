@@ -19,7 +19,7 @@
         sizes="(max-width: 640px) 62vw, (max-width: 1100px) 38vw, 380px"
         width="1100"
         height="1375"
-        alt="Retrato editorial de Nicolás Alarcón Guzmán, Frontend Developer"
+        alt="Retrato de Nicolás Alarcón Guzmán"
         fetchpriority="high"
       />
     </div>
@@ -27,18 +27,18 @@
 
   <div class="hero__bottom">
     <div class="hero__intro">
-      <span>Frontend Developer · Angular · TypeScript · E2E</span>
+      <span>{{ profile.headline }}</span>
       <p>{{ profile.summary }}</p>
     </div>
 
     <div class="hero__actions" aria-label="Acciones principales">
-      <a class="button" href="#contacto">Contactarme</a>
-      <a class="button button--ghost" [href]="profile.cvUrl" download>Descargar CV</a>
+      <a class="button" [href]="profile.cvUrl" download>CV en inglés</a>
+      <a class="button button--ghost" href="#corpoyarumos">Ver caso de automatización</a>
     </div>
   </div>
 
-  <a class="hero__scroll" href="#skills" aria-label="Ir al stack técnico">
-    <span>Scroll</span>
+  <a class="hero__scroll" href="#corpoyarumos" aria-label="Ir al caso de Corpoyarumos">
+    <span>Ver caso</span>
     <i aria-hidden="true"></i>
   </a>
 </section>
