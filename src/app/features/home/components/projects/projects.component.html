@@ -7,11 +7,12 @@
   <div class="container projects__stack">
     @for (project of projects; track project.name; let index = $index) {
       <article
+        #projectCard
         class="project-card"
         [class.project-card--featured]="project.kind !== 'website'"
         [class.project-card--violet]="index % 3 === 1"
         [class.project-card--ember]="index % 3 === 2"
-        [style.top.px]="project.kind === 'website' ? 92 + index * 12 : null"
+        [style.--project-stack-top]="(92 + index * 12) + 'px'"
       >
         <header class="project-card__header">
           <span class="project-card__number" aria-hidden="true">{{ (index + 1).toString().padStart(2, '0') }}</span>

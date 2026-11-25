@@ -29,6 +29,7 @@
 
 .project-card {
   position: sticky;
+  top: min(var(--project-stack-top), calc(100svh - var(--project-card-height, 0px) - 16px));
   display: grid;
   min-height: min(76svh, 850px);
   align-content: start;
@@ -38,7 +39,6 @@
   border-radius: clamp(26px, 4vw, 52px);
   background: #111111;
   box-shadow: 0 28px 64px rgba(0, 0, 0, 0.4);
-  transform-origin: top center;
 }
 
 .project-card--violet {
@@ -50,7 +50,6 @@
 }
 
 .project-card--featured {
-  position: relative;
   min-height: auto;
 }
 
@@ -343,7 +342,7 @@
 
   .project-card {
     position: relative;
-    top: auto !important;
+    top: auto;
   }
 
   .project-card__header {
