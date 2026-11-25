@@ -31,7 +31,7 @@
         >
           {{ locale.text(item.label) }}
           @if (item.fragment === 'proyectos') {
-            <small aria-hidden="true">07</small>
+            <small aria-hidden="true">{{ projectCount }}</small>
           }
         </a>
       }

@@ -49,6 +49,11 @@
   background: linear-gradient(155deg, #111111 36%, #1a1210 100%);
 }
 
+.project-card--featured {
+  position: relative;
+  min-height: auto;
+}
+
 .project-card__header {
   display: grid;
   grid-template-columns: clamp(76px, 10vw, 140px) 1fr auto;
@@ -59,7 +64,7 @@
 
 .project-card__number {
   color: var(--mist);
-  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-size: clamp(2.5rem, 8vw, 8rem);
   font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 0.78;
@@ -75,7 +80,7 @@
 
 .project-card__header h3 {
   margin-top: 6px;
-  font-size: clamp(1.75rem, 4vw, 4rem);
+  font-size: clamp(1.5rem, 4vw, 4rem);
   font-weight: 650;
   letter-spacing: -0.035em;
   line-height: 0.95;
@@ -142,6 +147,74 @@
   color: var(--mist);
   font-size: 0.7rem;
   font-weight: 500;
+}
+
+.project-stages {
+  margin-top: clamp(12px, 1.5vw, 20px);
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.project-stages li {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  gap: clamp(12px, 2vw, 28px);
+  padding-block: clamp(16px, 2vw, 24px);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-stages__number {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+:is(.project-stages, .project-versions) h4 {
+  color: var(--mist);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+:is(.project-stages, .project-versions) p {
+  max-width: 60ch;
+  margin-top: 6px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.project-card__body--versions {
+  grid-template-columns: 1fr;
+}
+
+.project-card__copy--wide :is(p, strong) {
+  max-width: 72ch;
+}
+
+.project-versions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 42px);
+}
+
+.project-versions__item {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.project-versions :is(.project-visual, img) {
+  height: auto;
+  min-height: 0;
+}
+
+.project-versions img {
+  aspect-ratio: 16 / 10;
+}
+
+.project-versions .project-visual {
+  margin-top: 16px;
+  padding-top: 46px;
 }
 
 .project-visual {
@@ -274,12 +347,16 @@
   }
 
   .project-card__header {
-    grid-template-columns: 76px 1fr;
+    grid-template-columns: clamp(46px, 12vw, 76px) minmax(0, 1fr);
   }
 
   .project-card__header .button {
     grid-column: 1 / -1;
     width: fit-content;
+  }
+
+  .project-versions {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .project-visual,

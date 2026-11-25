@@ -1,41 +1,47 @@
 <section id="proyectos" class="projects" aria-labelledby="projects-title">
   <div class="container projects__heading">
     <h2 id="projects-title" class="display-title hero-heading">{{ locale.text('Proyectos') }}</h2>
-    <p>{{ locale.text('Una selección de sitios y experiencias digitales publicados, creados para sectores, públicos y objetivos de negocio distintos.') }}</p>
+    <p>{{ locale.text('Automatización de procesos y desarrollo web para operaciones, visitantes y equipos comerciales.') }}</p>
   </div>
 
   <div class="container projects__stack">
     @for (project of projects; track project.name; let index = $index) {
       <article
         class="project-card"
+        [class.project-card--featured]="project.kind !== 'website'"
         [class.project-card--violet]="index % 3 === 1"
         [class.project-card--ember]="index % 3 === 2"
-        [style.top.px]="92 + index * 12"
+        [style.top.px]="project.kind === 'website' ? 92 + index * 12 : null"
       >
         <header class="project-card__header">
-          <span class="project-card__number">0{{ index + 1 }}</span>
+          <span class="project-card__number" aria-hidden="true">{{ (index + 1).toString().padStart(2, '0') }}</span>
           <div>
             <small>{{ locale.text(project.type) }}</small>
             <h3>{{ locale.text(project.name) }}</h3>
           </div>
-          <a
-            class="button button--ghost project-card__link"
-            [href]="project.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            [attr.aria-label]="locale.text('Ver ') + locale.text(project.name) + locale.text(' en una nueva pestaña')"
-          >
-            {{ locale.text('Ver proyecto') }}
-            <svg viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M5 11 11 5M6 5h5v5" />
-            </svg>
-          </a>
+          @if (project.kind !== 'versions') {
+            @let action = project.kind === 'workflow' ? 'Ver demo con datos sintéticos' : 'Ver proyecto';
+            <a
+              class="button button--ghost project-card__link"
+              [href]="project.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="locale.text(action) + ' · ' + locale.text(project.name) + locale.text(' en una nueva pestaña')"
+            >
+              {{ locale.text(action) }}
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M5 11 11 5M6 5h5v5" />
+              </svg>
+            </a>
+          }
         </header>
 
-        <div class="project-card__body">
-          <div class="project-card__copy">
+        <div class="project-card__body" [class.project-card__body--versions]="project.kind === 'versions'">
+          <div class="project-card__copy" [class.project-card__copy--wide]="project.kind === 'versions'">
             <p>{{ locale.text(project.description) }}</p>
-            <strong>{{ locale.text(project.impact) }}</strong>
+            @if (project.impact) {
+              <strong>{{ locale.text(project.impact) }}</strong>
+            }
             <div class="project-card__tags" [attr.aria-label]="locale.text('Tecnologías y capacidades del proyecto')">
               @for (tech of project.technologies; track tech) {
                 <span>{{ locale.text(tech) }}</span>
@@ -43,29 +49,67 @@
             </div>
           </div>
 
-          <a
-            class="project-visual"
-            [href]="project.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            [attr.aria-label]="locale.text('Abrir ') + locale.text(project.name) + locale.text(' en una nueva pestaña')"
-          >
-            <div class="project-visual__bar">
-              <span></span><span></span><span></span>
-              <small>{{ project.url.replace('https://', '').replace('/', '') }}</small>
-            </div>
-            <img
-              [src]="project.image"
-              width="1440"
-              height="900"
-              [alt]="locale.text(project.imageAlt)"
-              loading="lazy"
-              decoding="async"
-            />
-            <span class="project-visual__visit" aria-hidden="true">{{ locale.text('Visitar sitio') }}</span>
-          </a>
+          @switch (project.kind) {
+            @case ('workflow') {
+              <ol class="project-stages">
+                @for (stage of project.stages; track stage.name; let stageIndex = $index) {
+                  <li>
+                    <span class="project-stages__number" aria-hidden="true">0{{ stageIndex + 1 }}</span>
+                    <div>
+                      <h4>{{ locale.text(stage.name) }}</h4>
+                      <p>{{ locale.text(stage.detail) }}</p>
+                    </div>
+                  </li>
+                }
+              </ol>
+            }
+            @case ('versions') {
+              <div class="project-versions">
+                @for (version of project.versions; track version.url) {
+                  <div class="project-versions__item">
+                    <h4>{{ locale.text(version.label) }}</h4>
+                    <p>{{ locale.text(version.summary) }}</p>
+                    <ng-container
+                      [ngTemplateOutlet]="preview"
+                      [ngTemplateOutletContext]="{ $implicit: version, label: project.name + ' · ' + locale.text(version.label) }"
+                    />
+                  </div>
+                }
+              </div>
+            }
+            @case ('website') {
+              <ng-container
+                [ngTemplateOutlet]="preview"
+                [ngTemplateOutletContext]="{ $implicit: project, label: locale.text(project.name) }"
+              />
+            }
+          }
         </div>
       </article>
     }
   </div>
 </section>
+
+<ng-template #preview let-site let-label="label">
+  <a
+    class="project-visual"
+    [href]="site.url"
+    target="_blank"
+    rel="noopener noreferrer"
+    [attr.aria-label]="locale.text('Abrir ') + label + locale.text(' en una nueva pestaña')"
+  >
+    <div class="project-visual__bar" aria-hidden="true">
+      <span></span><span></span><span></span>
+      <small>{{ site.url.replace('https://', '').replace('/', '') }}</small>
+    </div>
+    <img
+      [src]="site.image"
+      width="1440"
+      height="900"
+      [alt]="locale.text(site.imageAlt)"
+      loading="lazy"
+      decoding="async"
+    />
+    <span class="project-visual__visit" aria-hidden="true">{{ locale.text('Visitar sitio') }}</span>
+  </a>
+</ng-template>

@@ -1,7 +1,7 @@
 import { Component, signal, inject } from '@angular/core';
 import { PortfolioLanguageService } from '../../core/services/portfolio-language.service';
 
-import { navItems, profile } from '../../data/portfolio.data';
+import { navItems, profile, projects } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +12,7 @@ export class HeaderComponent {
   protected readonly locale = inject(PortfolioLanguageService);
   protected readonly profile = profile;
   protected readonly navItems = navItems;
+  protected readonly projectCount = projects.length.toString().padStart(2, '0');
   protected readonly isMenuOpen = signal(false);
 
   toggleMenu(): void {

@@ -18,16 +18,33 @@ export interface ExperienceItem {
   caseStudyUrl?: string;
 }
 
-export interface ProjectItem {
-  name: string;
-  description: string;
-  technologies: string[];
-  impact: string;
-  type: string;
+interface ProjectPreview {
   url: string;
   image: string;
   imageAlt: string;
 }
+
+interface ProjectVersion extends ProjectPreview {
+  label: string;
+  summary: string;
+}
+
+interface ProjectStage {
+  name: string;
+  detail: string;
+}
+
+export type ProjectItem = {
+  name: string;
+  description: string;
+  technologies: string[];
+  impact?: string;
+  type: string;
+} & (
+  | ({ kind: 'website' } & ProjectPreview)
+  | { kind: 'versions'; versions: [ProjectVersion, ProjectVersion] }
+  | { kind: 'workflow'; url: string; stages: ProjectStage[] }
+);
 
 export interface SocialLink {
   label: string;
@@ -117,7 +134,7 @@ export const experience: ExperienceItem[] = [
       'Automaticé un flujo documental con Python y la API de OpenAI a partir de datos de Excel.',
     achievements: [
       'Reduje el tiempo de elaboración de cada diagnóstico de unos 30 a 2 minutos. El equipo entregó 548 diagnósticos en el plazo acordado.',
-      'Extendí la automatización a los 548 planes asociados y a la generación del diseño curricular de cada plan aprobado.',
+      'Generé borradores para los 548 planes asociados con Python y la API de OpenAI, y automaticé el diseño curricular de cada plan aprobado.',
     ],
     stack: ['Python', 'OpenAI API', 'Excel'],
     caseStudyUrl: 'https://github.com/nicolasAG54/corpoyarumos-automation-demo',
@@ -153,18 +170,59 @@ export const experience: ExperienceItem[] = [
 
 export const projects: ProjectItem[] = [
   {
-    name: 'Girardot Express',
+    kind: 'workflow',
+    name: 'Corpoyarumos',
+    type: 'Automatización documental',
     description:
-      'Sitio de lanzamiento para un centro comercial, enfocado en presentar el proyecto, atraer marcas y comunicar su próxima apertura.',
-    technologies: ['JavaScript', 'Leaflet', 'Responsive', 'SEO'],
+      'Un mismo encargo, tres documentos. Analicé datos de Excel y conecté tres procesos: el diagnóstico alimentaba el plan y la aprobación del plan habilitaba el diseño curricular.',
     impact:
-      'Integra cuenta regresiva, galería, información comercial, cambio de idioma y ubicación en una experiencia inmersiva.',
-    type: 'Experiencia comercial',
-    url: 'https://girardotexpress.netlify.app/',
-    image: '/assets/images/projects/girardot-express.webp',
-    imageAlt: 'Página principal de Girardot Express con visual arquitectónico del centro comercial',
+      'El equipo entregó los 548 diagnósticos a tiempo y ayudó a mantener vigente un contrato público multimillonario en pesos colombianos.',
+    technologies: ['Python', 'Excel', 'OpenAI API'],
+    url: 'https://github.com/nicolasAG54/corpoyarumos-automation-demo',
+    stages: [
+      {
+        name: 'Generador de diagnósticos',
+        detail:
+          'Python procesó los registros de Excel y la API de OpenAI redactó los textos. El tiempo por diagnóstico bajó de unos 30 a 2 minutos.',
+      },
+      {
+        name: 'Generador de planes de formación',
+        detail:
+          'Python usó los hallazgos de cada diagnóstico para estructurar su plan. La API de OpenAI redactó los textos de los 548 planes asociados.',
+      },
+      {
+        name: 'Generador de diseños curriculares',
+        detail:
+          'A partir de cada plan aprobado, automaticé el documento de diseño curricular para trasladar los objetivos y contenidos al programa de formación.',
+      },
+    ],
   },
   {
+    kind: 'versions',
+    name: 'Girardot Express',
+    description:
+      'Dos versiones del sitio de un centro comercial. La primera presentó el lanzamiento y la segunda amplió la información para visitantes y marcas.',
+    technologies: ['JavaScript', 'Angular', 'Leaflet', 'Netlify'],
+    type: 'Experiencia comercial',
+    versions: [
+      {
+        label: 'V1 · Sitio de lanzamiento',
+        summary: 'Landing bilingüe con cuenta regresiva, galería y captación de marcas.',
+        url: 'https://girardotexpress.netlify.app/',
+        image: '/assets/images/projects/girardot-express.webp',
+        imageAlt: 'Página principal de Girardot Express con visual arquitectónico del centro comercial',
+      },
+      {
+        label: 'V2 · Sitio actual en Angular',
+        summary: 'Dominio oficial con páginas de proyecto y preguntas frecuentes, y formularios de contacto.',
+        url: 'https://girardotexpress.com.co/',
+        image: '/assets/images/projects/girardot-express-v2.webp',
+        imageAlt: 'Página de inicio de Girardot Express V2 con el mensaje Todo lo que necesitas, más cerca.',
+      },
+    ],
+  },
+  {
+    kind: 'website',
     name: 'Tu Clínica Veterinaria',
     description:
       'Plantilla web profesional para clínicas veterinarias, con una ruta clara desde la presentación de servicios hasta el contacto.',
@@ -178,6 +236,7 @@ export const projects: ProjectItem[] = [
       'Página principal de una plantilla para clínica veterinaria con equipo médico y un perro',
   },
   {
+    kind: 'website',
     name: 'Corporación los Yarumos',
     description:
       'Plataforma institucional para comunicar trayectoria, proyectos de desarrollo rural, territorios y conocimiento aplicado.',
@@ -190,6 +249,7 @@ export const projects: ProjectItem[] = [
     imageAlt: 'Página principal de Corporación los Yarumos sobre desarrollo rural y territorio',
   },
   {
+    kind: 'website',
     name: 'Plantilla para centros comerciales',
     description:
       'Plantilla web para centros comerciales, diseñada para presentar locales, eventos, gastronomía, entretenimiento y servicios.',
@@ -202,6 +262,7 @@ export const projects: ProjectItem[] = [
     imageAlt: 'Vista demostrativa de una plantilla web para centros comerciales',
   },
   {
+    kind: 'website',
     name: 'Plantilla para agencias de viajes',
     description:
       'Plantilla web para agencias de viajes que permite presentar destinos, fechas de salida y paquetes nacionales e internacionales.',
@@ -215,6 +276,7 @@ export const projects: ProjectItem[] = [
       'Vista demostrativa de una plantilla para agencias de viajes sobre el Caribe colombiano',
   },
   {
+    kind: 'website',
     name: 'CozyPaws',
     description:
       'Concepto de tienda digital para mascotas con una interfaz cálida, visual y centrada en descubrir productos.',
@@ -227,6 +289,7 @@ export const projects: ProjectItem[] = [
     imageAlt: 'Página principal de CozyPaws con perros, un gato y productos para mascotas',
   },
   {
+    kind: 'website',
     name: 'Mesa Demo',
     description:
       'Plantilla gastronómica que convierte una carta de restaurante en una experiencia digital visual y personalizable.',
