@@ -15,6 +15,7 @@ export interface ExperienceItem {
   summary: string;
   achievements: string[];
   stack: string[];
+  caseStudyUrl?: string;
 }
 
 export interface ProjectItem {
@@ -37,15 +38,21 @@ export interface SocialLink {
 export const profile = {
   name: 'Nicolás Alarcón Guzmán',
   shortName: 'Nicolás',
-  role: 'Frontend Developer · Angular',
+  role: 'Desarrollador Full-Stack',
   location: 'Colombia',
   email: 'ni-co123@hotmail.com',
   cvUrl: '/assets/cv/nicolas-alarcon-cv.pdf',
-  headline: 'Frontend Developer especializado en Angular',
+  headline: 'Angular · React · Node.js · .NET',
+  pageTitle: {
+    en: 'Full-Stack Developer | Nicolás Alarcón Guzmán',
+    es: 'Desarrollador Full-Stack | Nicolás Alarcón Guzmán',
+  },
+  pageDescription:
+    'Full-stack developer building business web applications, REST APIs, and automation with Angular, React, Next.js, Node.js, .NET, and Python.',
   summary:
-    'Transformo procesos complejos en interfaces claras, rápidas de entender y fáciles de mantener. Especializado en Angular, TypeScript y calidad E2E.',
+    'Desarrollo aplicaciones web y APIs, y automatizo pruebas y procesos con Playwright y Python.',
   recruiterPitch:
-    'Soy Ingeniero de Sistemas con más de cuatro años construyendo y evolucionando aplicaciones web empresariales. Trabajo desde la experiencia del usuario hasta la arquitectura de componentes, integrando APIs y pruebas E2E para que cada entrega sea clara, estable y mantenible.',
+    'Soy ingeniero de sistemas con más de cuatro años desarrollando aplicaciones web empresariales. Trabajo con Angular, React y Next.js en el frontend y con Node.js y .NET en APIs y lógica de negocio. Actualmente estudio Magento Open Source, Adobe Commerce y GraphQL para tiendas headless.',
 };
 
 export const navItems: NavItem[] = [
@@ -60,6 +67,8 @@ export const skillGroups: SkillGroup[] = [
     area: 'Frontend',
     skills: [
       'Angular',
+      'React',
+      'Next.js',
       'TypeScript',
       'JavaScript',
       'HTML5',
@@ -71,41 +80,74 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    area: 'Backend & Data',
-    skills: ['Node.js', 'ASP.NET Core', 'Firebase', 'REST APIs', 'MySQL', 'Oracle SQL'],
+    area: 'Backend y datos',
+    skills: [
+      'Node.js',
+      'C#',
+      'ASP.NET Core',
+      'Python',
+      'APIs REST',
+      'MySQL',
+      'Oracle SQL',
+      'Firebase',
+    ],
   },
   {
-    area: 'Quality',
-    skills: ['Playwright', 'Karate', 'Selenium', 'E2E Testing', 'Component Testing'],
+    area: 'Nube, seguridad y pruebas',
+    skills: [
+      'AWS',
+      'Azure DevOps',
+      'Playwright',
+      'JWT',
+      'SonarCloud',
+      'Selenium',
+      'Karate',
+      'Pruebas E2E',
+      'Pruebas de componentes',
+    ],
   },
 ];
 
 export const experience: ExperienceItem[] = [
   {
-    role: 'Frontend Developer',
+    role: 'Prestación de servicios en automatización',
+    company: 'Corpoyarumos',
+    period: 'Abr 2026 — Actualidad',
+    summary:
+      'Automaticé un flujo documental con Python y la API de OpenAI a partir de datos de Excel.',
+    achievements: [
+      'Reduje el tiempo de elaboración de cada diagnóstico de unos 30 a 2 minutos. El equipo entregó 548 diagnósticos en el plazo acordado.',
+      'Extendí la automatización a los 548 planes asociados y a la generación del diseño curricular de cada plan aprobado.',
+    ],
+    stack: ['Python', 'OpenAI API', 'Excel'],
+    caseStudyUrl: 'https://github.com/nicolasAG54/corpoyarumos-automation-demo',
+  },
+  {
+    role: 'Desarrollador de software',
     company: 'Qualita Corp',
-    period: 'Mar 2026 — Actualidad',
+    period: 'Mar 2026 — Oct 2026',
     summary:
       'Desarrollo y evolución de aplicaciones bancarias sobre ASP.NET MVC 5 y .NET Framework 4.8, integradas con servicios REST y Oracle.',
     achievements: [
       'Desarrollo y mantenimiento de una aplicación web empresarial con ASP.NET MVC, C# y Razor.',
       'Integración de servicios REST, consultas Oracle SQL y optimización de rendimiento.',
-      'Control de versiones en Azure Repos y análisis de calidad con SonarCloud.',
+      'Revisión de código y validación de cambios con pruebas unitarias y de regresión, Azure Pipelines y SonarCloud.',
     ],
-    stack: ['ASP.NET MVC', '.NET Framework', 'Razor', 'jQuery', 'Bootstrap', 'Oracle'],
+    stack: ['C#', 'ASP.NET MVC', 'ASP.NET Core', 'Oracle', 'Azure DevOps', 'SonarCloud'],
   },
   {
     role: 'Frontend Developer',
     company: 'Teleperformance',
-    period: 'Jul 2021 — Ago 2025',
+    period: 'Jul 2021 — Oct 2025',
     summary:
       'Desarrollo y mantenimiento de aplicaciones internas para operaciones empresariales, priorizando estabilidad, escalabilidad y experiencia de usuario.',
     achievements: [
       'Desarrollo y mantenimiento de más de 30 módulos con Angular, Vue y React.',
       'Integración con servicios Node.js y .NET para operaciones de negocio.',
+      'Automatización de pruebas E2E con Playwright para validar los flujos antes de cada entrega.',
       'Optimización de formularios, tablas y flujos administrativos usados por equipos internos.',
     ],
-    stack: ['Angular', 'Vue', 'React', 'Node.js', '.NET', 'MySQL'],
+    stack: ['Angular', 'Vue', 'React', 'Node.js', '.NET', 'MySQL', 'Playwright'],
   },
 ];
 

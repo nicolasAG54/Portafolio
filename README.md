@@ -1,6 +1,6 @@
 # Portafolio Nicolás Alarcón Guzmán
 
-Portafolio profesional construido con Angular moderno para presentar experiencia como Frontend Developer especializado en Angular, TypeScript, interfaces empresariales y pruebas E2E con Playwright.
+Portafolio profesional construido con Angular para presentar experiencia full-stack en aplicaciones web empresariales, APIs, pruebas con Playwright y automatización con Python.
 
 ## Stack
 

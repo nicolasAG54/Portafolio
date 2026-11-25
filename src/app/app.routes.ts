@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 
+import { profile } from './data/portfolio.data';
+
 export const routes: Routes = [
   {
     path: '',
@@ -7,7 +9,7 @@ export const routes: Routes = [
       import('./features/home/home-page.component').then(
         (component) => component.HomePageComponent,
       ),
-    title: 'Nicolás Alarcón Guzmán | Frontend Angular',
+    title: profile.pageTitle.en,
   },
   {
     path: '**',

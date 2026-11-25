@@ -1,8 +1,8 @@
 {
-  "name": "Portafolio de Nicolás Alarcón Guzmán",
+  "name": "Nicolás Alarcón Guzmán | Portfolio",
   "short_name": "Nicolás AG",
-  "description": "Portafolio profesional de Nicolás Alarcón Guzmán, desarrollador frontend especializado en Angular.",
-  "lang": "es-CO",
+  "description": "Full-stack developer building business web applications, REST APIs, and automation.",
+  "lang": "en",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0c0c0c",

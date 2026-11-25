@@ -25,15 +25,15 @@
       <div class="marquee__track">
         @for (skill of group.skills; track skill) {
           <div class="skill-tile">
-            <small>{{ group.area }}</small>
-            <strong>{{ skill }}</strong>
+            <small>{{ locale.text(group.area) }}</small>
+            <strong>{{ locale.text(skill) }}</strong>
           </div>
         }
         <div class="marquee__duplicate" aria-hidden="true">
           @for (skill of group.skills; track skill) {
             <div class="skill-tile">
-              <small>{{ group.area }}</small>
-              <strong>{{ skill }}</strong>
+              <small>{{ locale.text(group.area) }}</small>
+              <strong>{{ locale.text(skill) }}</strong>
             </div>
           }
         </div>

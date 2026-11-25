@@ -10,7 +10,7 @@ export class PortfolioLanguageService {
   private readonly document = inject(DOCUMENT);
   private readonly app = inject(ApplicationRef);
   private readonly title = inject(Title);
-  private readonly selection = signal<'es' | 'en'>('es');
+  private readonly selection = signal<'es' | 'en'>('en');
   private pendingLanguage?: 'es' | 'en';
 
   readonly isEnglish = computed(() => this.selection() === 'en');
@@ -57,10 +57,6 @@ export class PortfolioLanguageService {
     this.selection.set(language);
     const englishSelected = language === 'en';
     this.document.documentElement.lang = englishSelected ? 'en' : 'es-CO';
-    this.title.setTitle(
-      englishSelected
-        ? 'Angular Frontend Developer | Nicolás Alarcón Guzmán'
-        : 'Desarrollador Frontend Angular | Nicolás Alarcón Guzmán',
-    );
+    this.title.setTitle(profile.pageTitle[language]);
   }
 }

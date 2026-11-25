@@ -2,7 +2,7 @@
   <div class="container">
     <div class="experience__heading">
       <h2 id="experience-title" class="display-title">{{ locale.text('Experiencia') }}</h2>
-      <p>{{ locale.text('Más de cuatro años convirtiendo requisitos de negocio en interfaces estables para equipos y usuarios reales.') }}</p>
+      <p>{{ locale.text('Más de cuatro años desarrollando aplicaciones, integrando APIs y automatizando procesos empresariales.') }}</p>
     </div>
 
     <div class="timeline">
@@ -28,6 +28,11 @@
                 <span>{{ locale.text(tech) }}</span>
               }
             </div>
+            @if (item.caseStudyUrl; as caseStudyUrl) {
+              <a class="button button--dark timeline__case-study" [href]="caseStudyUrl">
+                {{ locale.text('Ver demo con datos sintéticos') }}
+              </a>
+            }
           </div>
         </article>
       }

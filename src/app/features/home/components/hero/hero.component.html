@@ -19,7 +19,7 @@
         sizes="(max-width: 640px) 62vw, (max-width: 1100px) 38vw, 380px"
         width="1100"
         height="1375"
-        [alt]="locale.text('Retrato editorial de Nicolás Alarcón Guzmán, Frontend Developer')"
+        [alt]="locale.text('Retrato de Nicolás Alarcón Guzmán')"
         fetchpriority="high"
       />
     </div>
@@ -27,7 +27,7 @@
 
   <div class="hero__bottom">
     <div class="hero__intro">
-      <span>Frontend Developer · Angular · TypeScript · E2E</span>
+      <span>{{ locale.text(profile.role) }} · {{ profile.headline }}</span>
       <p>{{ locale.text(profile.summary) }}</p>
     </div>
 
@@ -38,7 +38,7 @@
   </div>
 
   <a class="hero__scroll" href="#skills" [attr.aria-label]="locale.text('Ir al stack técnico')">
-    <span>Scroll</span>
+    <span>{{ locale.text('Desplazar') }}</span>
     <i aria-hidden="true"></i>
   </a>
 </section>
