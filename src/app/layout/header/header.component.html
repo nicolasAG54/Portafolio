@@ -46,7 +46,7 @@
           type="button"
           [attr.lang]="hintLanguage"
           [attr.aria-label]="languageHint"
-          (click)="locale.toggle()"
+          (click)="locale.toggle($event.detail > 0)"
         >
           <img
             class="nav__flag"
