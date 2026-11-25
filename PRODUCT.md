@@ -40,7 +40,7 @@ La evaluación ocurre principalmente en navegador, a menudo desde un enlace comp
 ## Evidence on Hand
 
 - Foto profesional optimizada: `public/assets/images/nicolas-alarcon-photo.webp`.
-- Retrato editorial derivado de la foto real para el hero: `public/assets/images/nicolas-hero-cutout-720.webp` y `public/assets/images/nicolas-hero-cutout-1100.webp`.
+- Retrato editorial derivado de la foto real para el hero: `public/assets/images/nicolas-hero-cutout-v2-720.webp` y `public/assets/images/nicolas-hero-cutout-v2-1100.webp`.
 - Avatar de navegación derivado de la foto real: `public/assets/images/nicolas-avatar.webp`.
 - Visual de interfaz optimizado: `public/assets/images/about-web-interface-780.webp` y `public/assets/images/about-web-interface-1100.webp`.
 - CV descargable: `public/assets/cv/nicolas-alarcon-cv.pdf`.
