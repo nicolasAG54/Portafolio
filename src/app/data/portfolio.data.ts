@@ -73,10 +73,10 @@ export const profile = {
 };
 
 export const navItems: NavItem[] = [
-  { label: 'Sobre mí', fragment: 'sobre-mi' },
   { label: 'Experiencia', fragment: 'experiencia' },
   { label: 'Proyectos', fragment: 'proyectos' },
   { label: 'Contacto', fragment: 'contacto' },
+  { label: 'Sobre mí', fragment: 'sobre-mi' },
 ];
 
 export const skillGroups: SkillGroup[] = [

@@ -1,45 +1,29 @@
 <section id="sobre-mi" class="about" aria-labelledby="about-title">
-  <span class="about__orb about__orb--left" aria-hidden="true">UI</span>
-  <span class="about__orb about__orb--right" aria-hidden="true">TS</span>
-
   <div class="container about__inner">
     <h2 id="about-title" class="display-title hero-heading">{{ locale.text('Sobre mí') }}</h2>
 
     <div class="about__story">
       <p>{{ locale.text(profile.recruiterPitch) }}</p>
-      <a class="button" href="#contacto">{{ locale.text('Hablemos') }}</a>
+      <p>{{ locale.text('Fuera del trabajo disfruto recorrer Colombia en moto, sin afán, con tiempo para conocer los pueblos y a las personas que encuentro en el camino.') }}</p>
     </div>
 
-    <figure class="about__visual">
+    <article class="about__project" aria-labelledby="nico-on-road-title">
+      <div class="about__project-copy">
+        <h3 id="nico-on-road-title">Nico on Road</h3>
+        <p class="about__status">{{ locale.text('Proyecto en construcción') }}</p>
+        <p>{{ locale.text('Mi bitácora de viajes en una Royal Enfield Meteor 350. Estoy preparando una web para reunir rutas, capítulos y postales de Colombia.') }}</p>
+        <a class="button button--ghost" href="https://nico-on-road.netlify.app/" target="_blank" rel="noopener noreferrer">
+          {{ locale.text('Abrir vista previa') }}
+        </a>
+      </div>
       <img
-        src="/assets/images/about-web-interface-1100.webp"
-        srcset="
-          /assets/images/about-web-interface-780.webp   780w,
-          /assets/images/about-web-interface-1100.webp 1100w
-        "
-        sizes="(max-width: 720px) calc(100vw - 40px), 980px"
-        width="1100"
-        height="1100"
-        [alt]="locale.text('Representación de una interfaz empresarial moderna')"
+        src="/assets/images/projects/nico-on-road.webp"
+        width="1265"
+        height="800"
+        [alt]="locale.text('Página de inicio de Nico on Road, proyecto de viajes en moto por Colombia')"
         loading="lazy"
         decoding="async"
       />
-      <figcaption>{{ locale.text('Interfaces empresariales · Integración · Pruebas E2E') }}</figcaption>
-    </figure>
-
-    <ul class="about__highlights" [attr.aria-label]="locale.text('Fortalezas profesionales')">
-      <li>
-        <strong>{{ locale.text('Producto') }}</strong>
-        <span>{{ locale.text('Flujos que reducen fricción y hacen visible lo importante.') }}</span>
-      </li>
-      <li>
-        <strong>{{ locale.text('Ingeniería') }}</strong>
-        <span>{{ locale.text('Componentes reutilizables, APIs REST y autenticación con JWT.') }}</span>
-      </li>
-      <li>
-        <strong>{{ locale.text('Calidad') }}</strong>
-        <span>{{ locale.text('Análisis de código con SonarCloud y pruebas E2E con Playwright.') }}</span>
-      </li>
-    </ul>
+    </article>
   </div>
 </section>
