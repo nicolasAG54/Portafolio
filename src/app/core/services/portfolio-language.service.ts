@@ -36,8 +36,8 @@ export class PortfolioLanguageService {
       return;
     }
 
-    this.languageFade = body.animate([{ opacity: 0.9 }, { opacity: 1 }], {
-      duration: 180,
+    this.languageFade = body.animate([{ opacity: 0.74 }, { opacity: 1 }], {
+      duration: 320,
       easing: 'ease-out',
     });
   }
