@@ -59,7 +59,7 @@ export const profile = {
   location: 'Colombia',
   email: 'ni-co123@hotmail.com',
   cvUrl: '/assets/cv/nicolas-alarcon-cv.pdf',
-  headline: 'Angular · React · Node.js · .NET',
+  headline: 'Next.js · React · Angular · Node.js · .NET',
   pageTitle: {
     en: 'Full-Stack Developer | Nicolás Alarcón Guzmán',
     es: 'Desarrollador Full-Stack | Nicolás Alarcón Guzmán',
@@ -69,7 +69,7 @@ export const profile = {
   summary:
     'Desarrollo aplicaciones web y APIs, y automatizo pruebas y procesos con Playwright y Python.',
   recruiterPitch:
-    'Soy ingeniero de sistemas con más de cuatro años desarrollando aplicaciones web empresariales. Trabajo con Angular, React y Next.js en el frontend y con Node.js y .NET en APIs y lógica de negocio. Actualmente estudio Magento Open Source, Adobe Commerce y GraphQL para tiendas headless.',
+    'Soy ingeniero de sistemas con más de cuatro años desarrollando aplicaciones web empresariales. He usado React y Next.js en proyectos internos y también trabajo con Angular, Node.js y .NET. Actualmente estudio Magento Open Source y Adobe Commerce, con foco en tiendas headless e integraciones GraphQL.',
 };
 
 export const navItems: NavItem[] = [
@@ -83,9 +83,9 @@ export const skillGroups: SkillGroup[] = [
   {
     area: 'Frontend',
     skills: [
-      'Angular',
-      'React',
       'Next.js',
+      'React',
+      'Angular',
       'TypeScript',
       'JavaScript',
       'HTML5',
