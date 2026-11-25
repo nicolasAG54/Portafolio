@@ -14,7 +14,7 @@ export class SeoService {
     const pageTitle = profile.pageTitle.en;
     const description = profile.pageDescription;
     const siteUrl = 'https://nicolasalarconguzman.site/';
-    const socialImage = `${siteUrl}assets/images/og-portfolio.jpg`;
+    const socialImage = `${siteUrl}assets/images/og-portfolio-full-stack.jpg`;
 
     this.title.setTitle(pageTitle);
     this.meta.updateTag({ name: 'description', content: description });

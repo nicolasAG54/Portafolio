@@ -3,6 +3,11 @@
   publish = "dist/portfolio-nicolas/browser"
 
 [[redirects]]
+  from = "/assets/images/og-portfolio.jpg"
+  to = "/assets/images/og-portfolio-full-stack.jpg"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
