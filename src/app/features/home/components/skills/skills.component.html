@@ -4,21 +4,18 @@
   [class.skills--paused]="isPaused()"
   aria-labelledby="skills-title"
 >
-  <h2 id="skills-title" class="visually-hidden">Stack técnico</h2>
+  <h2 id="skills-title" class="visually-hidden">{{ locale.text('Stack técnico') }}</h2>
   <div class="skills__intro container">
-    <p>
-      Un stack pensado para construir producto, integrarlo con negocio y protegerlo contra
-      regresiones.
-    </p>
+    <p>{{ locale.text('Un stack pensado para construir producto, integrarlo con negocio y protegerlo contra regresiones.') }}</p>
     <div class="skills__control">
-      <span>Stack técnico</span>
+      <span>{{ locale.text('Stack técnico') }}</span>
       <button
         type="button"
         [attr.aria-pressed]="isPaused()"
         aria-controls="skills"
         (click)="toggleMarquee()"
       >
-        {{ isPaused() ? 'Reanudar movimiento' : 'Pausar movimiento' }}
+        {{ locale.text(isPaused() ? 'Reanudar movimiento' : 'Pausar movimiento') }}
       </button>
     </div>
   </div>

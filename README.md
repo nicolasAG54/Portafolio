@@ -1,37 +1,104 @@
-# Nicolás Alarcón Guzmán · Software Developer
+# Portafolio Nicolás Alarcón Guzmán
 
-Systems Engineer based in Colombia. I build business applications with Angular and TypeScript, integrate REST APIs and .NET services, and automate document workflows with Python.
+Portafolio profesional construido con Angular moderno para presentar experiencia como Frontend Developer especializado en Angular, TypeScript, interfaces empresariales y pruebas E2E con Playwright.
 
-[Live portfolio](https://nicolasalarconguzman.site/) · [English portfolio and resume](https://nicolasalarconguzman.site/en/) · [LinkedIn](https://www.linkedin.com/in/nicolasalarconguzman/)
+## Stack
 
-## Selected work
+- Angular 21
+- Standalone Components
+- Angular Router
+- TypeScript
+- SCSS
+- Signals
+- Sintaxis moderna de control flow (`@if`, `@for`)
 
-| Project | What to look at |
-| --- | --- |
-| [This portfolio](https://nicolasalarconguzman.site/) | Angular 21 standalone components, TypeScript, SCSS and a data-driven project and experience catalog. |
-| Girardot Express | [Live commercial site](https://girardotexpress.netlify.app/) and a [separate Angular implementation](https://github.com/nicolasAG54/girardot-express-angular) with server rendering and prerendered public routes. |
-| [Corpoyarumos institutional site](https://corpoyarumos.netlify.app/) | Angular website presenting the organization's work. The document workflow below is a separate project. |
+## Estructura
 
-### Document automation at Corpoyarumos
+```text
+src/app/
+  core/
+    services/
+  shared/
+    components/
+  features/
+    home/
+      components/
+  data/
+  layout/
+```
 
-The team faced a backlog of 548 assessments. I built a Python script that called the OpenAI API to generate assessment narratives. The process went from approximately **30 to 2 minutes per assessment**, helping the team deliver all **548 assessments** on schedule. I extended the automation to the **548 corresponding strengthening plans** and to the curriculum design for each approved plan.
+La información editable vive en:
 
-[Run the public reconstruction with synthetic data](https://github.com/nicolasAG54/corpoyarumos-automation-demo).
+```text
+src/app/data/portfolio.data.ts
+```
 
-## Run locally
+Edita ahí skills, proyectos, experiencia, datos de contacto, enlaces sociales y ruta del CV.
 
-Use Node.js 22.12+ (22.x) or Node.js 24+ and npm 11.6.2.
+## Comandos
+
+Instalar dependencias:
 
 ```bash
-npm ci
+npm install
+```
+
+Ejecutar en desarrollo:
+
+```bash
 npm start
 ```
 
-Open `http://localhost:4200`. Update project and experience content in [`src/app/data/portfolio.data.ts`](src/app/data/portfolio.data.ts).
+Compilar para producción:
 
 ```bash
-npm test -- --watch=false
 npm run build
 ```
 
-The production build is written to `dist/portfolio-nicolas/browser`. The included [Netlify configuration](netlify.toml) builds and serves it at the root of the site.
+Ejecutar pruebas unitarias:
+
+```bash
+npm test
+```
+
+## CV
+
+El enlace del CV apunta a:
+
+```text
+/assets/cv/nicolas-alarcon-cv.pdf
+```
+
+Agrega tu PDF final en:
+
+```text
+public/assets/cv/nicolas-alarcon-cv.pdf
+```
+
+## Deploy
+
+### Vercel
+
+1. Conecta el repositorio.
+2. Framework preset: Angular.
+3. Build command: `npm run build`.
+4. Output directory: `dist/portfolio-nicolas/browser`.
+
+### Netlify
+
+1. Build command: `npm run build`.
+2. Publish directory: `dist/portfolio-nicolas/browser`.
+
+### GitHub Pages
+
+Compila con el `base-href` del repositorio:
+
+```bash
+npx ng build --base-href /Portafolio/
+```
+
+Publica el contenido de:
+
+```text
+dist/portfolio-nicolas/browser
+```

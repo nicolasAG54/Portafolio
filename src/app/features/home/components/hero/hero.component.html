@@ -3,12 +3,12 @@
 
   <div class="hero__title-wrap">
     <h1 id="hero-title" class="hero__title hero-heading">
-      <span>Hola, soy</span>
+      <span>{{ locale.text('Hola, soy') }}</span>
       <span class="hero__name">Nicolás</span>
     </h1>
   </div>
 
-  <figure class="hero__portrait" aria-label="Retrato de Nicolás Alarcón Guzmán">
+  <figure class="hero__portrait" [attr.aria-label]="locale.text('Retrato de Nicolás Alarcón Guzmán')">
     <div class="hero__portrait-frame">
       <img
         src="/assets/images/nicolas-hero-cutout-1100.webp"
@@ -19,7 +19,7 @@
         sizes="(max-width: 640px) 62vw, (max-width: 1100px) 38vw, 380px"
         width="1100"
         height="1375"
-        alt="Retrato de Nicolás Alarcón Guzmán"
+        [alt]="locale.text('Retrato editorial de Nicolás Alarcón Guzmán, Frontend Developer')"
         fetchpriority="high"
       />
     </div>
@@ -27,18 +27,18 @@
 
   <div class="hero__bottom">
     <div class="hero__intro">
-      <span>{{ profile.headline }}</span>
-      <p>{{ profile.summary }}</p>
+      <span>Frontend Developer · Angular · TypeScript · E2E</span>
+      <p>{{ locale.text(profile.summary) }}</p>
     </div>
 
-    <div class="hero__actions" aria-label="Acciones principales">
-      <a class="button" [href]="profile.cvUrl" download>CV en inglés</a>
-      <a class="button button--ghost" href="#corpoyarumos">Ver caso de automatización</a>
+    <div class="hero__actions" [attr.aria-label]="locale.text('Acciones principales')">
+      <a class="button" href="#contacto">{{ locale.text('Contactarme') }}</a>
+      <a class="button button--ghost" [href]="locale.cvUrl()" download>{{ locale.text('Descargar CV') }}</a>
     </div>
   </div>
 
-  <a class="hero__scroll" href="#corpoyarumos" aria-label="Ir al caso de Corpoyarumos">
-    <span>Ver caso</span>
+  <a class="hero__scroll" href="#skills" [attr.aria-label]="locale.text('Ir al stack técnico')">
+    <span>Scroll</span>
     <i aria-hidden="true"></i>
   </a>
 </section>

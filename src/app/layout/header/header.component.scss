@@ -140,6 +140,33 @@
   font-weight: 700;
 }
 
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-self: end;
+}
+
+.nav__language {
+  min-width: 38px;
+  min-height: 44px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--mist);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav__language:hover {
+  background: rgba(215, 226, 234, 0.12);
+}
+
+.nav__language:focus-visible {
+  outline: 2px solid var(--mist);
+  outline-offset: 2px;
+}
+
 .menu-button {
   display: none;
   width: 44px;

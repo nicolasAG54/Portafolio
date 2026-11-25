@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PortfolioLanguageService } from '../../../../core/services/portfolio-language.service';
 
 import { profile, socialLinks } from '../../../../data/portfolio.data';
 
@@ -8,6 +9,7 @@ import { profile, socialLinks } from '../../../../data/portfolio.data';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
+  protected readonly locale = inject(PortfolioLanguageService);
   protected readonly profile = profile;
   protected readonly socialLinks = socialLinks;
 }

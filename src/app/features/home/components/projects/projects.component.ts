@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PortfolioLanguageService } from '../../../../core/services/portfolio-language.service';
 
 import { projects } from '../../../../data/portfolio.data';
 
@@ -8,5 +9,6 @@ import { projects } from '../../../../data/portfolio.data';
   styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent {
+  protected readonly locale = inject(PortfolioLanguageService);
   protected readonly projects = projects;
 }

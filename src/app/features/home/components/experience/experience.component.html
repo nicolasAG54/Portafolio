@@ -1,8 +1,8 @@
 <section id="experiencia" class="experience" aria-labelledby="experience-title">
   <div class="container">
     <div class="experience__heading">
-      <h2 id="experience-title" class="display-title">Experiencia</h2>
-      <p>Más de cuatro años convirtiendo requisitos de negocio en interfaces estables para equipos y usuarios reales.</p>
+      <h2 id="experience-title" class="display-title">{{ locale.text('Experiencia') }}</h2>
+      <p>{{ locale.text('Más de cuatro años convirtiendo requisitos de negocio en interfaces estables para equipos y usuarios reales.') }}</p>
     </div>
 
     <div class="timeline">
@@ -12,20 +12,20 @@
 
           <div class="timeline__meta">
             <strong>{{ item.company }}</strong>
-            <span>{{ item.period }}</span>
+            <span>{{ locale.text(item.period) }}</span>
           </div>
 
           <div class="timeline__content">
-            <h3>{{ item.role }}</h3>
-            <p>{{ item.summary }}</p>
+            <h3>{{ locale.text(item.role) }}</h3>
+            <p>{{ locale.text(item.summary) }}</p>
             <ul>
               @for (achievement of item.achievements; track achievement) {
-                <li>{{ achievement }}</li>
+                <li>{{ locale.text(achievement) }}</li>
               }
             </ul>
-            <div class="timeline__stack" aria-label="Tecnologías utilizadas">
+            <div class="timeline__stack" [attr.aria-label]="locale.text('Tecnologías utilizadas')">
               @for (tech of item.stack; track tech) {
-                <span>{{ tech }}</span>
+                <span>{{ locale.text(tech) }}</span>
               }
             </div>
           </div>

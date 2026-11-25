@@ -9,9 +9,9 @@ export class SeoService {
   private readonly meta = inject(Meta);
 
   updatePortfolioTags(): void {
-    const pageTitle = 'Desarrollo fullstack y automatización | Nicolás Alarcón Guzmán';
+    const pageTitle = 'Desarrollador Frontend Angular | Nicolás Alarcón Guzmán';
     const description =
-      'Portafolio de Nicolás Alarcón Guzmán. Desarrollo fullstack, integración de APIs y automatización con TypeScript, .NET y Python.';
+      'Portafolio de Nicolás Alarcón Guzmán, desarrollador frontend Angular e ingeniero de sistemas con experiencia en TypeScript, aplicaciones empresariales y pruebas E2E.';
     const siteUrl = 'https://nicolasalarconguzman.site/';
     const socialImage = `${siteUrl}assets/images/og-portfolio.jpg`;
 
@@ -30,7 +30,7 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:image', content: socialImage });
     this.meta.updateTag({
       property: 'og:image:alt',
-      content: 'Portafolio profesional de Nicolás Alarcón Guzmán',
+      content: 'Nicolás Alarcón Guzmán, desarrollador frontend especializado en Angular',
     });
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
     this.meta.updateTag({ name: 'twitter:title', content: pageTitle });

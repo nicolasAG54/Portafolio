@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PortfolioLanguageService } from '../../../../core/services/portfolio-language.service';
 
 import { experience } from '../../../../data/portfolio.data';
 
@@ -8,5 +9,6 @@ import { experience } from '../../../../data/portfolio.data';
   styleUrl: './experience.component.scss',
 })
 export class ExperienceComponent {
+  protected readonly locale = inject(PortfolioLanguageService);
   protected readonly experience = experience;
 }

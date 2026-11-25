@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
+import { PortfolioLanguageService } from '../../../../core/services/portfolio-language.service';
 
 import { skillGroups } from '../../../../data/portfolio.data';
 
@@ -8,6 +9,7 @@ import { skillGroups } from '../../../../data/portfolio.data';
   styleUrl: './skills.component.scss',
 })
 export class SkillsComponent {
+  protected readonly locale = inject(PortfolioLanguageService);
   protected readonly skillGroups = skillGroups;
   protected readonly isPaused = signal(false);
 

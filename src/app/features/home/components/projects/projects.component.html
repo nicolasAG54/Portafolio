@@ -1,10 +1,7 @@
 <section id="proyectos" class="projects" aria-labelledby="projects-title">
   <div class="container projects__heading">
-    <h2 id="projects-title" class="display-title hero-heading">Proyectos</h2>
-    <p>
-      Una selección de sitios y experiencias digitales publicados, creados para sectores, públicos y
-      objetivos de negocio distintos.
-    </p>
+    <h2 id="projects-title" class="display-title hero-heading">{{ locale.text('Proyectos') }}</h2>
+    <p>{{ locale.text('Una selección de sitios y experiencias digitales publicados, creados para sectores, públicos y objetivos de negocio distintos.') }}</p>
   </div>
 
   <div class="container projects__stack">
@@ -18,17 +15,17 @@
         <header class="project-card__header">
           <span class="project-card__number">0{{ index + 1 }}</span>
           <div>
-            <small>{{ project.type }}</small>
-            <h3>{{ project.name }}</h3>
+            <small>{{ locale.text(project.type) }}</small>
+            <h3>{{ locale.text(project.name) }}</h3>
           </div>
           <a
             class="button button--ghost project-card__link"
             [href]="project.url"
             target="_blank"
             rel="noopener noreferrer"
-            [attr.aria-label]="'Ver ' + project.name + ' en una nueva pestaña'"
+            [attr.aria-label]="locale.text('Ver ') + locale.text(project.name) + locale.text(' en una nueva pestaña')"
           >
-            Ver proyecto
+            {{ locale.text('Ver proyecto') }}
             <svg viewBox="0 0 16 16" aria-hidden="true">
               <path d="M5 11 11 5M6 5h5v5" />
             </svg>
@@ -37,24 +34,13 @@
 
         <div class="project-card__body">
           <div class="project-card__copy">
-            <p>{{ project.description }}</p>
-            <strong>{{ project.impact }}</strong>
-            <div class="project-card__tags" aria-label="Tecnologías y capacidades del proyecto">
+            <p>{{ locale.text(project.description) }}</p>
+            <strong>{{ locale.text(project.impact) }}</strong>
+            <div class="project-card__tags" [attr.aria-label]="locale.text('Tecnologías y capacidades del proyecto')">
               @for (tech of project.technologies; track tech) {
-                <span>{{ tech }}</span>
+                <span>{{ locale.text(tech) }}</span>
               }
             </div>
-            @if (project.sourceUrl; as sourceUrl) {
-              <a
-                class="project-card__source"
-                [href]="sourceUrl"
-                target="_blank"
-                rel="noopener noreferrer"
-                [attr.aria-label]="'Ver la implementación en Angular de ' + project.name + ' en GitHub (nueva pestaña)'"
-              >
-                Implementación en Angular en GitHub
-              </a>
-            }
           </div>
 
           <a
@@ -62,7 +48,7 @@
             [href]="project.url"
             target="_blank"
             rel="noopener noreferrer"
-            [attr.aria-label]="'Abrir ' + project.name + ' en una nueva pestaña'"
+            [attr.aria-label]="locale.text('Abrir ') + locale.text(project.name) + locale.text(' en una nueva pestaña')"
           >
             <div class="project-visual__bar">
               <span></span><span></span><span></span>
@@ -72,11 +58,11 @@
               [src]="project.image"
               width="1440"
               height="900"
-              [alt]="project.imageAlt"
+              [alt]="locale.text(project.imageAlt)"
               loading="lazy"
               decoding="async"
             />
-            <span class="project-visual__visit" aria-hidden="true">Visitar sitio</span>
+            <span class="project-visual__visit" aria-hidden="true">{{ locale.text('Visitar sitio') }}</span>
           </a>
         </div>
       </article>

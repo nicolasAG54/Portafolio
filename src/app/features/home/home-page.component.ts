@@ -25,7 +25,6 @@ import { ValuePropositionComponent } from './components/value-proposition/value-
     FooterComponent,
   ],
   templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent implements OnInit {
   private readonly seo = inject(SeoService);

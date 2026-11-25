@@ -1,13 +1,13 @@
 <footer class="footer">
   <div class="container footer__top">
-    <a class="footer__brand" href="#inicio" aria-label="Volver al inicio">
+    <a class="footer__brand" href="#inicio" [attr.aria-label]="locale.text('Volver al inicio')">
       <span>NA</span>
       <strong>{{ profile.name }}</strong>
     </a>
 
-    <nav aria-label="Enlaces rápidos">
+    <nav [attr.aria-label]="locale.text('Enlaces rápidos')">
       @for (item of navItems; track item.fragment) {
-        <a [href]="'#' + item.fragment">{{ item.label }}</a>
+        <a [href]="'#' + item.fragment">{{ locale.text(item.label) }}</a>
       }
     </nav>
 

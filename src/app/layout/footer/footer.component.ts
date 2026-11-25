@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PortfolioLanguageService } from '../../core/services/portfolio-language.service';
 
 import { navItems, profile, socialLinks } from '../../data/portfolio.data';
 
@@ -8,6 +9,7 @@ import { navItems, profile, socialLinks } from '../../data/portfolio.data';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
+  protected readonly locale = inject(PortfolioLanguageService);
   protected readonly year = new Date().getFullYear();
   protected readonly profile = profile;
   protected readonly navItems = navItems;

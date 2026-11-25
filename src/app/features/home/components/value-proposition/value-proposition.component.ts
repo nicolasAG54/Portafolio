@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PortfolioLanguageService } from '../../../../core/services/portfolio-language.service';
 
 import { valuePoints } from '../../../../data/portfolio.data';
 
@@ -8,5 +9,6 @@ import { valuePoints } from '../../../../data/portfolio.data';
   styleUrl: './value-proposition.component.scss',
 })
 export class ValuePropositionComponent {
+  protected readonly locale = inject(PortfolioLanguageService);
   protected readonly valuePoints = valuePoints;
 }

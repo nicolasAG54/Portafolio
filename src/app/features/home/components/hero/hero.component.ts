@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PortfolioLanguageService } from '../../../../core/services/portfolio-language.service';
 
 import { profile } from '../../../../data/portfolio.data';
 
@@ -8,5 +9,6 @@ import { profile } from '../../../../data/portfolio.data';
   styleUrl: './hero.component.scss',
 })
 export class HeroComponent {
+  protected readonly locale = inject(PortfolioLanguageService);
   protected readonly profile = profile;
 }

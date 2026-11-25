@@ -3,11 +3,11 @@
   <span class="about__orb about__orb--right" aria-hidden="true">TS</span>
 
   <div class="container about__inner">
-    <h2 id="about-title" class="display-title hero-heading">Sobre mí</h2>
+    <h2 id="about-title" class="display-title hero-heading">{{ locale.text('Sobre mí') }}</h2>
 
     <div class="about__story">
-      <p>{{ profile.recruiterPitch }}</p>
-      <a class="button" href="#contacto">Hablemos</a>
+      <p>{{ locale.text(profile.recruiterPitch) }}</p>
+      <a class="button" href="#contacto">{{ locale.text('Hablemos') }}</a>
     </div>
 
     <figure class="about__visual">
@@ -20,25 +20,25 @@
         sizes="(max-width: 720px) calc(100vw - 40px), 980px"
         width="1100"
         height="1100"
-        alt="Representación de una interfaz empresarial moderna"
+        [alt]="locale.text('Representación de una interfaz empresarial moderna')"
         loading="lazy"
         decoding="async"
       />
-      <figcaption>Interfaces empresariales · Integración · Pruebas E2E</figcaption>
+      <figcaption>{{ locale.text('Interfaces empresariales · Integración · Pruebas E2E') }}</figcaption>
     </figure>
 
-    <ul class="about__highlights" aria-label="Fortalezas profesionales">
+    <ul class="about__highlights" [attr.aria-label]="locale.text('Fortalezas profesionales')">
       <li>
-        <strong>Producto</strong>
-        <span>Flujos que reducen fricción y hacen visible lo importante.</span>
+        <strong>{{ locale.text('Producto') }}</strong>
+        <span>{{ locale.text('Flujos que reducen fricción y hacen visible lo importante.') }}</span>
       </li>
       <li>
-        <strong>Ingeniería</strong>
-        <span>Componentes reutilizables, tipados y fáciles de extender.</span>
+        <strong>{{ locale.text('Ingeniería') }}</strong>
+        <span>{{ locale.text('Componentes reutilizables, tipados y fáciles de extender.') }}</span>
       </li>
       <li>
-        <strong>Calidad</strong>
-        <span>Integraciones cuidadas y pruebas E2E para detectar regresiones.</span>
+        <strong>{{ locale.text('Calidad') }}</strong>
+        <span>{{ locale.text('Integraciones cuidadas y pruebas E2E para detectar regresiones.') }}</span>
       </li>
     </ul>
   </div>

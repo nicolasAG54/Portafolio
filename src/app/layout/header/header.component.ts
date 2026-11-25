@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
+import { PortfolioLanguageService } from '../../core/services/portfolio-language.service';
 
 import { navItems, profile } from '../../data/portfolio.data';
 
@@ -8,6 +9,7 @@ import { navItems, profile } from '../../data/portfolio.data';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  protected readonly locale = inject(PortfolioLanguageService);
   protected readonly profile = profile;
   protected readonly navItems = navItems;
   protected readonly isMenuOpen = signal(false);

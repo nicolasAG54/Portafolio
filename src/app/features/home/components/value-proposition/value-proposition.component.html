@@ -1,18 +1,15 @@
 <section class="value" aria-labelledby="value-title">
   <div class="container value__inner">
     <div class="value__copy">
-      <h2 id="value-title">Frontend que entiende el negocio.</h2>
-      <p>
-        Traduzco requerimientos en interfaces claras, cuido el contrato con backend y dejo una base
-        que el equipo puede seguir evolucionando.
-      </p>
+      <h2 id="value-title">{{ locale.text('Frontend que entiende el negocio.') }}</h2>
+      <p>{{ locale.text('Traduzco requerimientos en interfaces claras, cuido el contrato con backend y dejo una base que el equipo puede seguir evolucionando.') }}</p>
     </div>
 
     <ol>
       @for (point of valuePoints; track point; let index = $index) {
         <li>
           <span>0{{ index + 1 }}</span>
-          <strong>{{ point }}</strong>
+          <strong>{{ locale.text(point) }}</strong>
         </li>
       }
     </ol>

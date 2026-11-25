@@ -1,16 +1,16 @@
 <section id="contacto" class="contact" aria-labelledby="contact-title">
   <div class="container contact__inner">
-    <p class="contact__lead">Disponible para colaborar en desarrollo web, integraciones y automatización desde Colombia.</p>
-    <h2 id="contact-title" class="display-title">Hablemos</h2>
+    <p class="contact__lead">{{ locale.text('Si tu equipo necesita convertir requerimientos complejos en una experiencia frontend clara y mantenible, podemos hablar.') }}</p>
+    <h2 id="contact-title" class="display-title">{{ locale.text('Hablemos') }}</h2>
 
     <div class="contact__actions">
-      <a class="button button--dark" [href]="'mailto:' + profile.email">Escribirme</a>
-      <a class="button button--dark" [href]="profile.cvUrl" download>CV en inglés</a>
+      <a class="button button--dark" [href]="'mailto:' + profile.email">{{ locale.text('Escribirme') }}</a>
+      <a class="button button--dark" [href]="locale.cvUrl()" download>{{ locale.text('Descargar CV') }}</a>
     </div>
 
     <div class="contact__links">
       @for (link of socialLinks; track link.label) {
-        <a [href]="link.href" target="_blank" rel="noreferrer" [attr.aria-label]="'Abrir ' + link.label">
+        <a [href]="link.href" target="_blank" rel="noreferrer" [attr.aria-label]="locale.text('Abrir ') + link.label">
           <span>{{ link.label }}</span>
           <strong>{{ link.value }}</strong>
         </a>
