@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 100">
+  <defs>
+    <path id="star" d="M0-3.08l.69 2.13h2.24L1.12.36l.69 2.13L0 1.18l-1.81 1.31.69-2.13L-2.93-.95h2.24z"/>
+    <pattern id="stars" width="12.66" height="10.78" patternUnits="userSpaceOnUse">
+      <use href="#star" x="6.33" y="5.39" fill="#fff"/>
+      <use href="#star" x="12.66" y="10.78" fill="#fff"/>
+      <use href="#star" x="0" y="10.78" fill="#fff"/>
+      <use href="#star" x="12.66" y="0" fill="#fff"/>
+      <use href="#star" x="0" y="0" fill="#fff"/>
+    </pattern>
+    <clipPath id="canton"><path d="M3.1 2.1h69.8v49.6H3.1z"/></clipPath>
+  </defs>
+  <path fill="#fff" d="M0 0h190v100H0z"/>
+  <path stroke="#B31942" stroke-width="7.692" d="M0 3.846h190M0 19.231h190M0 34.615h190M0 50h190M0 65.385h190M0 80.769h190M0 96.154h190"/>
+  <path fill="#0A3161" d="M0 0h76v53.846H0z"/>
+  <path fill="url(#stars)" clip-path="url(#canton)" d="M0 0h76v53.846H0z"/>
+</svg>

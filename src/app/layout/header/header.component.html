@@ -45,6 +45,13 @@
         [attr.lang]="locale.isEnglish() ? 'es' : 'en'"
         (click)="locale.toggle()"
       >
+        <img
+          class="nav__flag"
+          [src]="locale.isEnglish() ? '/assets/flags/co.svg' : '/assets/flags/us.svg'"
+          alt=""
+          width="20"
+          height="14"
+        />
         {{ locale.isEnglish() ? 'ES' : 'EN' }}
       </button>
       <a class="nav__cv" [href]="locale.cvUrl()" download>{{ locale.text('Descargar CV') }}</a>

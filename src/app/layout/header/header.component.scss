@@ -148,14 +148,24 @@
 }
 
 .nav__language {
+  display: inline-flex;
   min-width: 38px;
   min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding-inline: 8px;
   border-radius: 999px;
   background: transparent;
   color: var(--mist);
   font-size: 0.72rem;
   font-weight: 600;
   cursor: pointer;
+}
+
+.nav__flag {
+  flex: none;
+  object-fit: contain;
 }
 
 .nav__language:hover {

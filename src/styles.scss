@@ -195,6 +195,13 @@ section {
   }
 }
 
+::view-transition-group(root),
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.35, 0, 0.2, 1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
